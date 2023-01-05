@@ -24,7 +24,7 @@ function UserPerfile() {
       console.log(data)
           e.preventDefault();
           axios
-          .post("/user/edit",data,{
+          .post("https://salomtv-backend.onrender.com/user/edit",data,{
           })
           .then(res =>{
             alert("updated")

@@ -23,7 +23,7 @@ function SignIn() {
       console.log(data)
           e.preventDefault();
           axios
-          .post("/user/login",data,{
+          .post("https://salomtv-backend.onrender.com/user/login",data,{
           })
           .then(res =>{
             alert(res.data)

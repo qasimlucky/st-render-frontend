@@ -16,7 +16,7 @@ function LandingPage() {
 
 useEffect(() => { 
   axios
-  .post("/language/get",{
+  .post("https://salomtv-backend.onrender.com/language/get",{
     keyword: lang
 
   })
