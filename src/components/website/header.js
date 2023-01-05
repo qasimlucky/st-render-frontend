@@ -58,7 +58,7 @@ function Header() {
             console.log(data)
                 e.preventDefault();
                 axios
-                .get("https://salomtv-backend.onrender.com/user/logout",data,{
+                .get("/user/logout",data,{
                 })
                 .then(res =>{
                   alert(res.data)
@@ -226,10 +226,10 @@ function Header() {
                                     {/* <span class="close">&times;</span> */}
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li><a href="index.html">Home</a> </li>
+                                            <li><Link to="/home">Home</Link> </li>
                                             <li><a href="service.html">Tv Shows</a></li>
                                             <li><a href="about.html">Serials</a></li>
-                                            <li><a href="faq.html">Movies</a></li>
+                                            <li><Link to="/player">Movies</Link></li>
                                             <li><a href="contact.html">Watch list</a></li>
                                             <li><a href="blog.html">Kids Section</a></li>
                                         </ul>
