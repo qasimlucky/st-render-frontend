@@ -25,7 +25,7 @@ function Header() {
     useEffect(() => {
         
         axios
-        .get("/language/select")
+        .get("https://salomtv-backend.onrender.com/language/select")
         .then(Response =>{
             setData(Response.data)
             console.log("this is response data")
@@ -58,7 +58,7 @@ function Header() {
             console.log(data)
                 e.preventDefault();
                 axios
-                .get("/user/logout",data,{
+                .get("https://salomtv-backend.onrender.com/user/logout",data,{
                 })
                 .then(res =>{
                   alert(res.data)
