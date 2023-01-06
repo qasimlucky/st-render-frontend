@@ -25,7 +25,7 @@ function Header() {
     useEffect(() => {
         
         axios
-        .get("https://salomtv-backend.onrender.com/language/select")
+        .get("/language/select")
         .then(Response =>{
             setData(Response.data)
             console.log("this is response data")

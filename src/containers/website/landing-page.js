@@ -14,24 +14,25 @@ function LandingPage() {
         console.log(lang)
   
 
-useEffect(() => { 
-  axios
-  .post("https://salomtv-backend.onrender.com/language/get",{
-    keyword: lang
+            useEffect(() => { 
+            axios
+            .post("/language/get",{
+                keyword: lang
 
-  })
-  .then(Response =>{
-      setLanguageData(Response.data[0])
-      setLanguageSate(true)
-      console.log(Response.data[0])
+            })
+            .then(Response =>{
+                setLanguageData(Response.data[0])
+                setLanguageSate(true)
+                //console.log(Response.data[0])
 
-      
-    })
-  .catch(err =>{
-      console.log(err)
-    })
-    
-  },[]);
+                
+                })
+            .catch(err =>{
+                console.log(err)
+                })
+                
+            },[]);
+
  function changelang(){
     alert("tttttttt")
     localStorage.setItem("key", "sddd")

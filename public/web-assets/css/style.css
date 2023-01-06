@@ -3909,13 +3909,13 @@ border-radius: 2px;
 .stv-hm-rs-main{
     background-color: #0d0d31;
 }
-.stv-hm-rs-box1 {
+/* .stv-hm-rs-box1 {
     background-color: #0d0d31;
     color: whitesmoke;
     padding: 0 0 0px 30px;
     font-size: 16px;
     font-weight: bold;
-}
+} */
 .stv-hm-rs-box1 a{
     color: #d51c58 !important;
     padding-left: 5px;
@@ -3940,7 +3940,7 @@ border-radius: 2px;
 
 
 
-
+/* 
 a{
 text-decoration: none !important;
 }
@@ -3967,72 +3967,8 @@ box-shadow: 0rem 0rem 7rem 1rem black;
 }
 .coming-slider-item:hover .overlay{
 opacity: 0.8;
-}
-.overlay-box{
-display: flex;
-position: relative;
-width: 87%;
-height: 100%;
-margin: auto;
-font-family: poppins;
-}
-.overlay-parts{
-float: left;
-margin: auto;
-position: relative;
-width: 50%;
-}
-.overlay-part1 h4 {
-    font-size: 11px;
-    font-weight: bold;
-    font-family: poppins;
-    color: whitesmoke;
-    line-height: initial;
-    margin: 0;
-}
-.part1-1 {
-    margin: 3px 0;
-}
-.part1-1 .movie-about{
-/* padding-left: 3%; */
-}
-.part1-1 span {
-    font-size: 8px;
-    margin: auto;
-    padding: 0 2px 0;
-    margin-right: 4px;
-}
-.part1-2 {
-    margin: 7px 0;
-}
-.part1-2 a {
-    font-size: 9px !important;
-    font-weight: 100;
-    padding: 0px 4px;
-    cursor: pointer;
-}
-.overlay-part2 {
-    display: inline-grid;
-    margin: 15px 0 11px 0;
-}
-.part2-1 {
-    background-color: whitesmoke;
-    width: 20px;
-    height: 20px;
-    padding: 0px 1px 0 0.8px;
-    text-align: center;
-    margin-left: auto;
-    border-radius: 50%;
-    border: 2px solid #b1aeaee0;
-}
-.part2-1 i {
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-size: 8px;
-    color: #d51c58;
-    padding: 2px;
-    margin-left: 0.5px;
-}
+} */
+
 
 
 
@@ -4079,6 +4015,7 @@ a:hover{
     transition: .5s ease;
     background-color: rgb(20 18 18 / 68%);
 }
+
   .container:hover .overlay{
     opacity: 1;
     transform: scale(1.30); 
@@ -6087,13 +6024,12 @@ span{
 /* stv-flag-main HEADER FLAGS MENU CSS ENDS =============================================================== */
 
 
-/* new list css */
+/* HOME PAGE NEW LIST SLIDER SECTION STARTS  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .stv-hp-row {
     margin-top: 25px;
     --handle-size: 5rem;
     --img-gap: .55rem;
-    /* border: 1px solid red; */
 }
 .stv-hp-header {
     display: flex;
@@ -6143,13 +6079,6 @@ span{
     width: 100%;
     height: 100%;
 }
-  /* .stv-hp-slider img {
-    flex: 0 0 calc(100% / var(--items-per-screen));
-    max-width: calc(100% / var(--items-per-screen));
-    aspect-ratio: 15.5 / 9;
-    padding: var(--img-gap) !important;
-    border-radius: 9px;
-} */
   .handle:hover, .handle:focus {
     background-color: #00000095;
 }
@@ -6221,69 +6150,9 @@ span{
     padding: .5rem calc(var(--img-gap) * 2 + var(--handle-size));
     align-items: center;
   }
-  @media (max-width: 2300px) {
-    .stv-hp-slider {
-      --items-per-screen: 9;
-    }
-  }
-  @media (max-width: 2000px) {
-    .stv-hp-slider {
-      --items-per-screen: 8;
-    }
-  }
-  @media (max-width: 1600px) {
-    .stv-hp-slider {
-      --items-per-screen: 7;
-    }
-  }
-  @media (max-width: 1400px) {
-    .stv-hp-slider {
-      --items-per-screen: 6;
-    }
-  }
-  @media (max-width: 1200px) {
-    .stv-hp-slider {
-      --items-per-screen: 5;
-    }
-  }
-  @media (max-width: 1000px) {
-    .stv-hp-slider {
-      --items-per-screen: 4;
-    }
-  }
-  @media (max-width: 750px) {
-    .stv-hp-slider {
-      --items-per-screen: 3;
-    }
-  }
-  @media (max-width: 500px) {
-    .stv-hp-slider {
-      --items-per-screen: 2;
-    }
-  }
-  /* body {
-    background-color: #333;
-    color: white;
-  } */
-  
-  /* MY OVERLAY NEW CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-  
-  /* .stv-hp-movie {
-    height: 100px;
-    width: 180px;
-    display: contents;
-} */
-/* .overlay-movie {
-    margin: var(--img-gap) !important;
-    position: absolute;
-    border-radius: 3px;
-    height: 100px;
-    width: 180px;
-    opacity: 0;
-    transition: .2s ease;
-    background-color: rgb(20 18 18 / 68%);
-} */
 
+/* MY OVERLAY NEW CSS  STARTS +++++++++++++++++++++++++++++++++++++++++++++++++ */
+  
 .stv-hp-movie {
     flex: 0 0 calc(100% / var(--items-per-screen));
     max-width: calc(100% / var(--items-per-screen));
@@ -6302,20 +6171,85 @@ span{
     transition: .2s ease;
     background-color: rgb(20 18 18 / 68%);
 }
-.overlay-movie .overlay-box{
+.overlay-box{
+    display: flex;
+    position: relative;
     width: 80%;
+    height: 100%;
+    margin: auto;
+    font-family: poppins;
 }
-  .stv-hp-movie:hover .overlay-movie{
+.overlay-parts{
+    float: left;
+    margin: auto;
+    position: relative;
+    width: 50%;
+}
+.overlay-part1 h4 {
+    font-size: 11px;
+    font-weight: bold;
+    font-family: poppins;
+    color: whitesmoke;
+    line-height: initial;
+    margin: 0;
+}
+.part1-1 {
+    margin: 3px 0;
+}
+.part1-1 .movie-about{
+    /* padding-left: 3%; */
+}
+.part1-1 span {
+    font-size: 8px;
+    margin: auto;
+    padding: 0 2px 0;
+    margin-right: 4px;
+}
+.part1-2 {
+    margin: 7px 0;
+}
+.part1-2 a {
+    font-size: 9px !important;
+    font-weight: 100;
+    padding: 0px 4px;
+    cursor: pointer;
+}
+.overlay-part2 {
+    display: inline-grid;
+    margin: 15px 0 11px 0;
+}
+.part2-1 {
+    background-color: whitesmoke;
+    width: 20px;
+    height: 20px;
+    padding: 0px 1px 0 0.8px;
+    text-align: center;
+    margin-left: auto;
+    border-radius: 50%;
+    border: 2px solid #b1aeaee0;
+}
+.part2-1 i {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-size: 8px;
+    color: #d51c58;
+    padding: 2px;
+    margin-left: 0.5px;
+}
+.stv-hp-movie:hover .overlay-movie{
     opacity: 1;
     transform: scale(1.38); 
     transition: transform 0.2s; 
     transition-delay: .1s;
     box-shadow: 0px 0px 5px 1.5px black; 
     z-index: 999;
-  }
-  .stv-hp-movie:hover .list-images-movie{
+}
+.stv-hp-movie:hover .list-images-movie{
     transform: scale(1.38); 
     transition: transform 0.2s; 
     transition-delay: .1s;
     z-index: 999;
-  }
+}
+/* MY OVERLAY NEW CSS ENDS ===================================================== */
+
+/* HOME PAGE NEW LIST SLIDER SECTION ENDS =======================================================================*/

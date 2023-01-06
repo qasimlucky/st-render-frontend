@@ -245,6 +245,13 @@ WE MAY RELEASE FUTURE UPDATES SO IT WILL OVERWRITE THIS FILE. IT'S BETTER AND SA
 .gradient{
     background-image: linear-gradient(2deg, #0d0d31, transparent);
 }
+.home-gradient-1{
+    width: 100%;
+    height: 10px;
+    background-color: #0d0d31;
+    contain: layout;
+    box-shadow: 0 -14px 32px 20px #0d0d31;
+}
 .fill{
     background-color: #111;
 }
@@ -4024,6 +4031,7 @@ width: 50%;
     font-size: 8px;
     color: #d51c58;
     padding: 2px;
+    margin-left: 0.5px;
 }
 
 
@@ -4523,7 +4531,7 @@ input {
     height: auto;
     background-color: #191722;
     right: 65px;
-    top: 55px;
+    top: 53px;
     position: absolute;
     display: none;
     z-index: 1;
@@ -4632,7 +4640,7 @@ input {
     height: 100px;
     background-color: #191722;
     right: 0;
-    top: 53px;
+    top: 52px;
     position: absolute;
     display: none;
     z-index: 1;
@@ -4890,15 +4898,16 @@ a:hover{
     float: left;
     margin: auto;
 }
-.plan-p2-p1{
+.plan-p2-p1 {
     background-size: cover;
+    background-position: center;
 }
 .plan-p2-p1 p {
     color: whitesmoke;
     font-size: small;
     text-align: center;
     margin: auto;
-    padding-top: 7px;
+    padding-top: 5px;
     font-weight: 500;
 }
 .plan-p2-p1 h2 {
@@ -5126,6 +5135,16 @@ a:hover{
     position: relative;
     margin: auto;
 }
+.more-like{
+    background-color: #0d0d31;
+    color: whitesmoke;
+    padding: 8px 52px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.relative.flex{
+    background-color: #0d0d31;
+}
 .home-popup-s2-p1 {
     width: 18%;
     height: 100%;
@@ -5235,6 +5254,9 @@ a:hover{
     font-size: small;
     color: #0d0d31;
 }
+.fa.fa-volume-down{
+    font-size: small !important;
+}
 .add-favrt .favourite{
     /* width: 75%; */
 }
@@ -5260,7 +5282,8 @@ a:hover{
     padding-top: 15px;
     font-size: small;
 }
-/* MODAL POPUP CSS STARTS ++++++++++++++++++++++++++++++*/
+/*HOME PAGE MODAL POPUP CSS STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
 .ReactModal__Overlay{
     background-color: rgb(166 166 166 /38%) !important;
 }
@@ -5277,7 +5300,6 @@ a:hover{
 .ReactModal__Content::-webkit-scrollbar {
     display: none;
 }
-/* MODAL POPUP CSS STARTS  ================================*/
 
 .hover-css{
     display: none !important;
@@ -5290,11 +5312,12 @@ a:hover{
     height: 115px;
     width: 30px;
 }
-
-
-
-/* home page popup video */
-
+/* .w-full.h-full{
+    padding: 13px 0;
+} */
+.row-slide-box{
+    width: 200px;
+}
 :root{
     --player-width: 800px;
     --controls-color: #F2F2F2;
@@ -5337,7 +5360,7 @@ a:hover{
     z-index: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
 }
-/* player progressbar */
+/* player progressbar ++++++++++++++++++++++++++++++++++*/
 .player-progressbar{
     width: var(--slider-width);
     height: 10px;
@@ -5419,7 +5442,7 @@ a:hover{
     right: calc(0px - ((var(--thumb-width) / 2) + 50px));
     opacity: 0;
 }
-/* preview progress */
+/* preview progress ++++++++++++++++++++++++++++++++++*/
 .range-container .preview-progress{
     position: absolute;
     width: var(--preview-progress-width);
@@ -5427,14 +5450,14 @@ a:hover{
     background-color: #ffffff63;
     z-index: -1;
 }
-/* loded data progress */
+/* loded data progress ++++++++++++++++++++++++*/
 .range-container .loaded-progress{
     position: absolute;
     height: 100%;
     background-color: #ffffff63;
     z-index: -2;
 }
-/* player lower controls */
+/* player lower controls +++++++++++++++++++*/
 .lower-controls{
     width: var(--player-width);
     height: 42px;
@@ -5682,7 +5705,7 @@ a:hover{
     position: relative;
     width: 26px;
   }
-  /* The time controls section */
+  /* The time controls section ++++++++++++++++*/
   
   .timecontrols {
     display: flex;
@@ -5735,6 +5758,14 @@ a:hover{
 }
 .audio-play-center{
     padding: 10px;
+}
+.fa.fa-volume-up{
+    font-size: 36px;
+    color: whitesmoke;
+}
+.fa.fa-volume-mute{
+    font-size: 36px;
+    color: whitesmoke;
 }
 .audio-control-row {
     position: relative;
@@ -5809,6 +5840,11 @@ a:hover{
 .movie-player {
     height: 100vh;
 }
+.movie-player.home-popup-s1 a img{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
 .mp-box {
     background-color: black;
     height: 100%;
@@ -5826,8 +5862,6 @@ a:hover{
     background-color: transparent;
     margin-top: -10rem;
 }
-.mp-audio-control {
-}
 .mp-audio-control-col {
     float: left;
     position: relative;
@@ -5835,7 +5869,6 @@ a:hover{
     margin-right: 10px;
 }
 .mp-audio-btn-box.mp-audio-control-col {
-    /* width: 100%; */
     text-align: right;
     float: right;
 }
@@ -5845,20 +5878,15 @@ a:hover{
     margin: auto;
 }
 .mp-center-video-btn {
-    width: 45px;
-    height: 45px;
     cursor: pointer;
     float: right;
 }
-.mp-audio-play-center{
-    /* padding: 10px; */
-}
+
 .mp-audio-bar {
     display: flex;
 }
 .mp-audio-bar input {
     display: block;
-    /* width: 15%; */
     float: right;
     margin-right: 0;
 }
@@ -5871,15 +5899,6 @@ a:hover{
 .mp-center-box {
     z-index: 9;
 }
-.mp-controlsIcon--small {
-    width: 12px;
-    height: 12px;
-    cursor: pointer;
-}
-.mp-video-play-center {
-    width: 45px !important;
-    height: 45px !important;
-}
 .mp-controls {
     display: flex;
     align-items: center;
@@ -5889,43 +5908,12 @@ a:hover{
 }
 .mp-controlsIcon {
     cursor: pointer;
-    width: 55px;
-    height: 55px;
 }
 .mp-video-title h2{
     color: whitesmoke;
     font-size: xx-large;
     font-family: poppins;
     font-weight: bold;
-}
-.mp-video-btn{
-    display: flex;
-    padding: 6px 15px;
-    cursor: pointer;
-}
-.mp-video-play{
-    margin: auto;
-}
-.mp-video-btn-like-row{
-    display: flex;
-    position: relative;
-    width: 65px; 
-}
-.mp-part2-1{
-    background-color: whitesmoke;
-    width: 25px;
-    height: 25px;
-    padding: 6px;
-    text-align: center;
-    margin-left: auto;
-    border-radius: 50%;
-}
-.mp-part2-1 i{
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-size: 10px;
-    color: #d51c58;
-    padding:2px;
 }
 .mp-btn-like-col{
     float: left;
@@ -5964,12 +5952,6 @@ a:hover{
     background-color: #d51c58;
     height: 100%;
 }
-/* input[type="range"]::-webkit-slider-runnable-track {
-    background-color: red;
-  } */
-  /* input[type="range"]::-moz-range-track {
-    background-color: red;
-  } */
 .mp-movie-time-control {
     z-index: 999;
     width: 11%;
@@ -5985,39 +5967,27 @@ a:hover{
     color: whitesmoke;
 }
 .mp-expand{
-	width: 50px;
-    height: 45px;
 	color:whitesmoke;
-}
-.mp-subtitles-btn {
-    width: 50px;
-    height: 45px;
 }
 .mp-data-comes{
 	background:red;
     margin-top: 20px;
 }
-.mp-btn-forward a img {
-    width: 50px;
-    height: 45px;
-}
-.mp-btn-previous a img {
-    width: 50px;
-    height: 45px;
-}
-.mp-btn-seasons a img {
-    width: 50px;
-    height: 45px;
-}
-.mp-btn-expand{
-    font-size: 35px;
+.mp-btns{
     margin: 0 29px;
+    width: 20%;
+    height: 20%;
 }
-#mp-btns{
-    margin: 0 29px;
+.mp-btn-box{
+    width: 100%;
+    height: 100%;
 }
+/* MOVIE PLAYER SUBTITLE MODAL CSS STARTS +++++++++++++++++++++++++++++++++++ */
+
+/*  MOVIE PLAYER SUBTITLE MODAL CSS ENDS ==================================== */
 /*  MOVIE PLAYER CSS ENDS =============================================================================== */
 /*Chrome*/
+
 
 /* stv-flag-main HEADER FLAGS MENU CSS STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
@@ -6117,4 +6087,235 @@ span{
 /* stv-flag-main HEADER FLAGS MENU CSS ENDS =============================================================== */
 
 
+/* new list css */
 
+.stv-hp-row {
+    margin-top: 25px;
+    --handle-size: 5rem;
+    --img-gap: .55rem;
+    /* border: 1px solid red; */
+}
+.stv-hp-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem calc(var(--img-gap) * 2 + var(--handle-size));
+    align-items: center;
+    padding-bottom: 0;
+}
+.stv-hp-row .title {
+    font-size: 16px;
+    margin: 0;
+    font-family: poppins;
+    font-weight: bold;
+    color: whitesmoke;
+    letter-spacing: .3px;
+}
+.stv-hp-progress-bar {
+    display: flex;
+    gap: 0;
+  }
+  .progress-item {
+    flex: 0 0 1.5rem;
+    min-width: 2.5rem;
+    height: 0.3rem;
+    background-color: rgba(255, 255, 255, .5);
+}
+  .progress-item.active {
+    background-color: #d51c58;
+  }
+  .stv-hp-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 17px 0 25px 0;
+}
+  .stv-hp-slider {
+    --items-per-screen: 6;
+    --slider-index: 0;
+    display: flex;
+    flex-grow: 1;
+    margin: 0 var(--img-gap);
+    transform: translateX(calc(var(--slider-index) * -100%));
+    transition: transform 250ms ease-in-out;
+  }
+  .stv-hp-slider img {
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+}
+  /* .stv-hp-slider img {
+    flex: 0 0 calc(100% / var(--items-per-screen));
+    max-width: calc(100% / var(--items-per-screen));
+    aspect-ratio: 15.5 / 9;
+    padding: var(--img-gap) !important;
+    border-radius: 9px;
+} */
+  .handle:hover, .handle:focus {
+    background-color: #00000095;
+}
+.fa-angle-left:before {
+    content: "\f104";
+}
+.fa-angle-right:before {
+    content: "\f105";
+}
+.handle {
+    border: none;
+    border-radius: 4px;
+    flex-grow: 0;
+    opacity: 0;
+    flex-shrink: 0;
+    background-color: #00000030;
+    z-index: 10;
+    margin: 0;
+    width: var(--handle-size);
+    cursor: pointer;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 0;
+    transition: background-color 150ms ease-in-out;
+    position: relative;
+}
+  .left-handle {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .right-handle {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .handle:hover {
+    background-color:  #00000095;
+    opacity: 1;
+  }
+  .stv-hp-row .text {
+    transition: transform 150ms ease-in-out;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .stv-hp-row .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 4rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  .handle:hover .stv-hp-row .text,
+  .handle:focus .stv-hp-row .text {
+    transform: scale(1.2);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem calc(var(--img-gap) * 2 + var(--handle-size));
+    align-items: center;
+  }
+  @media (max-width: 2300px) {
+    .stv-hp-slider {
+      --items-per-screen: 9;
+    }
+  }
+  @media (max-width: 2000px) {
+    .stv-hp-slider {
+      --items-per-screen: 8;
+    }
+  }
+  @media (max-width: 1600px) {
+    .stv-hp-slider {
+      --items-per-screen: 7;
+    }
+  }
+  @media (max-width: 1400px) {
+    .stv-hp-slider {
+      --items-per-screen: 6;
+    }
+  }
+  @media (max-width: 1200px) {
+    .stv-hp-slider {
+      --items-per-screen: 5;
+    }
+  }
+  @media (max-width: 1000px) {
+    .stv-hp-slider {
+      --items-per-screen: 4;
+    }
+  }
+  @media (max-width: 750px) {
+    .stv-hp-slider {
+      --items-per-screen: 3;
+    }
+  }
+  @media (max-width: 500px) {
+    .stv-hp-slider {
+      --items-per-screen: 2;
+    }
+  }
+  /* body {
+    background-color: #333;
+    color: white;
+  } */
+  
+  /* MY OVERLAY NEW CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+  
+  /* .stv-hp-movie {
+    height: 100px;
+    width: 180px;
+    display: contents;
+} */
+/* .overlay-movie {
+    margin: var(--img-gap) !important;
+    position: absolute;
+    border-radius: 3px;
+    height: 100px;
+    width: 180px;
+    opacity: 0;
+    transition: .2s ease;
+    background-color: rgb(20 18 18 / 68%);
+} */
+
+.stv-hp-movie {
+    flex: 0 0 calc(100% / var(--items-per-screen));
+    max-width: calc(100% / var(--items-per-screen));
+    aspect-ratio: 15.5 / 9;
+    padding: var(--img-gap) !important;
+    border-radius: 9px;
+    display: flex;
+    position: relative;
+}
+.overlay-movie {
+    position: absolute;
+    border-radius: 3px;
+    height: 90%;
+    width: 95%;
+    opacity: 0;
+    transition: .2s ease;
+    background-color: rgb(20 18 18 / 68%);
+}
+.overlay-movie .overlay-box{
+    width: 80%;
+}
+  .stv-hp-movie:hover .overlay-movie{
+    opacity: 1;
+    transform: scale(1.38); 
+    transition: transform 0.2s; 
+    transition-delay: .1s;
+    box-shadow: 0px 0px 5px 1.5px black; 
+    z-index: 999;
+  }
+  .stv-hp-movie:hover .list-images-movie{
+    transform: scale(1.38); 
+    transition: transform 0.2s; 
+    transition-delay: .1s;
+    z-index: 999;
+  }
