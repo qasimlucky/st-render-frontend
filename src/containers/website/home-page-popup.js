@@ -1,5 +1,5 @@
 import React from "react";
-import {data} from "../../mockData"
+import {data} from "../../mockdata/mockData"
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 function HomePopUp() {
     const slideLeft = () => {

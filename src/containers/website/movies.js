@@ -7,11 +7,11 @@ import Header from "../../components/website/header";
 import WebFooter from "../../components/website/footer"; 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import {data} from "../../mockData"
-import {dataB} from "../../mockDataB"
-import {dataC} from "../../mockDataC"
-import {dataD} from "../../mockDataD"
-import {dataE} from "../../mockDataE"
+import {data} from "../../mockdata/mockData"
+import {dataB} from "../../mockdata/mockDataB"
+import {dataC} from "../../mockdata/mockDataC"
+import {dataD} from "../../mockdata/mockDataD"
+import {dataE} from "../../mockdata/mockDataE"
 import { MdChevronLeft, MdChevronRight, MdLaptopWindows } from 'react-icons/md';
 
 function Movies() {
