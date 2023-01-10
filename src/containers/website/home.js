@@ -10,6 +10,9 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import {data} from "../../mockData"
 import {dataB} from "../../mockDataB"
+import {dataC} from "../../mockDataC"
+import {dataD} from "../../mockDataD"
+import {dataE} from "../../mockDataE"
 
 import { MdChevronLeft, MdChevronRight, MdLaptopWindows } from 'react-icons/md';
 
@@ -1076,7 +1079,7 @@ function HomePage() {
                 </div>
             </button>
             <div class="stv-hp-slider">
-                {data.map((item) => (
+                {dataC.map((item) => (
                 // <div class="stv-hp-slidein">
                     <div  class="stv-hp-movie">
                         <img class="list-images-movie" src={item.img} />
@@ -1143,7 +1146,7 @@ function HomePage() {
                 </div>
             </button>
             <div class="stv-hp-slider">
-                {data.map((item) => (
+                {dataD.map((item) => (
                 // <div class="stv-hp-slidein">
                     <div  class="stv-hp-movie">
                         <img class="list-images-movie" src={item.img} />
@@ -1210,7 +1213,7 @@ function HomePage() {
                 </div>
             </button>
             <div class="stv-hp-slider">
-                {data.map((item) => (
+                {dataE.map((item) => (
                 // <div class="stv-hp-slidein">
                     <div  class="stv-hp-movie">
                         <img class="list-images-movie" src={item.img} />
