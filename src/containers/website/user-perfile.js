@@ -87,7 +87,8 @@ function UserPerfile() {
                       
                     </div>
                     <p class="p2p1-about">
-                      Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                      Hello! John doe, <br/> this is all about you. You can edit it any time and can save it easily. 
+                      You also can update your payment info and change your plan.
                     </p>
                   </div>
 
@@ -294,7 +295,6 @@ function UserPerfile() {
                           ) : (
                             <div><h3 class="info-h3">English</h3></div>
                           )}
-                          <h3 class="info-h3">English</h3>
                         </div>
                         <div class="form-group col-4" ></div>
                         {isshowinput ? (

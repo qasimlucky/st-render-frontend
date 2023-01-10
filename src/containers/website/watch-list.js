@@ -113,63 +113,7 @@ function WatchList() {
       
     // },[]);
  
-    const slideLeft = () => {
-        var slider = document.getElementById('slider');
-        slider.scrollLeft = slider.scrollLeft - 500;
-      };
-      const slideLeft2 = () => {
-        var slider2 = document.getElementById('slider2');
-        slider2.scrollLeft = slider2.scrollLeft - 500;
-      };
-      const slideLeft3 = () => {
-        var slider3 = document.getElementById('slider3');
-        slider3.scrollLeft = slider3.scrollLeft - 500;
-      };
-      const slideLeft4 = () => {
-        var slider4 = document.getElementById('slider4');
-        slider4.scrollLeft = slider4.scrollLeft - 500;
-      };
-      const slideLeft5 = () => {
-        var slider5 = document.getElementById('slider5');
-        slider5.scrollLeft = slider5.scrollLeft - 500;
-      };
-      const slideLeft6 = () => {
-        var slider5 = document.getElementById('slider6');
-        slider5.scrollLeft = slider5.scrollLeft - 500;
-      };
-      const slideLeft7 = () => {
-        var slider7 = document.getElementById('slider7');
-        slider7.scrollLeft = slider7.scrollLeft - 500;
-      };
     
-      const slideRight = () => {
-        var slider = document.getElementById('slider');
-        slider.scrollLeft = slider.scrollLeft + 500
-      };
-      const slideRight2 = () => {
-        var slider2 = document.getElementById('slider2');
-        slider2.scrollLeft = slider2.scrollLeft + 500
-      };
-      const slideRight3 = () => {
-        var slider3 = document.getElementById('slider3');
-        slider3.scrollLeft = slider3.scrollLeft + 500
-      };
-      const slideRight4 = () => {
-        var slider4 = document.getElementById('slider4');
-        slider4.scrollLeft = slider4.scrollLeft + 500
-      };
-      const slideRight5 = () => {
-        var slider5 = document.getElementById('slider5');
-        slider5.scrollLeft = slider5.scrollLeft + 500
-      };
-      const slideRight6 = () => {
-        var slider6 = document.getElementById('slider6');
-        slider6.scrollLeft = slider6.scrollLeft + 500
-      };
-      const slideRight7 = () => {
-        var slider7 = document.getElementById('slider7');
-        slider7.scrollLeft = slider7.scrollLeft + 500
-      };
 
       function openModal() {
         /* window.location.reload(false); */
@@ -208,1051 +152,1120 @@ function WatchList() {
       }
   
          return (
-            
-    
-                  <>
- {languagesate && ( 
-    <div>  
-        {/* HOME PAGE MODAL STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-        <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        contentLabel="Example Modal"
-        class="modal-class"
-      >
-        {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
-        {/* <button onClick={closeModal}>close</button> */}
-        <main class="home-popup web-bg-color">
-                <container class="home-popup-box">
-                    <section class="home-popup-s1">
-                    {/* video li width or heihgt 100% krni hai or baher wali div ki height adjust krni hai */}
-                    <div class="video-box">
-                         <video id="video1" ref={videoRef} className="video" src="/video.mp4"  autoplay="autoplay"></video> 
-                        {/* <video id="video1" ref={videoRef} className="video" src={selectedmoviedata.trailer}  autoplay="autoplay"></video> */}
-                    </div>
-                    
-                    <div className="controlsContainer">
-
-                        <div class="audio-control audio-control-row">
-                            {/* <img className="video-play-center" alt="" src="/audioIcon.gif"/>  setMuted(m => !m) */}
-                            <div class="audio-btn-box audio-control-col opacity">
-                            {ismuted ? (
-
-                                
-                                <a   class="center-video-btn audio-play-center">
-                                    <i className="fa fa-volume-up" onClick={() =>isMuted() }></i>
-                                </a>
-                                ) : (
-                                <a   class="center-video-btn audio-play-center">
-                                    <i className="fas fa-volume-mute" onClick={() =>isMutedOff() }></i>
-                                </a>
-                            
-                            )}
-                            </div>
-                            <div class="audio-control-col audio-bar input-row">
-                                <input  class="input-col"
-                                    type="range"
-                                    min={0}
-                                    max={1}
-                                    step={0.02}
-                                    value={volume}
-                                    onChange={event => {
-                                        setVolume(event.target.valueAsNumber)
-                                        const resetVolume =event.target.valueAsNumber/10;
-                                        /* console.log (typeof(resetVolume))
-                                        console.log (typeof(videoRef.current.volume)) */
-                                        videoRef.current.volume = resetVolume;
-                                        console.log(videoRef.current.volume)
-
-                                }}
-                                />
-                                {/* <button onClick={() => setMuted(m => !m)}>
-                                    {muted ? "muted" : "unmuted"}
-                                </button> */}
-                                <p class="input-col"> &nbsp;{(finalVolume.toFixed(1)*100)}</p>
-                            </div>
-
-                            
-                        </div>
-
-                    <div class="center-box opacity">
-                        {playing ? (
-                        <a onClick={() => videoHandler("pause")} class="center-video-btn">
-                            <img className="controlsIcon--small video-play-center" alt="" src="/pause.svg"/> 
-                        </a>
-
-                        ) : (
-                        <a onClick={() => videoHandler("play")} class="center-video-btn">
-                            <img className="controlsIcon--small video-play-center" alt="" src="/play.svg"/>
-                        </a>
-                        )}
-                    </div>
-
-                    <div className="controls">
-                        {/* <img onClick={revert} className="controlsIcon" alt="" src="/backward-5.svg"/> */}
-                        <div class="video-title"><h2>THE MARSHAL KING </h2></div>
-                    {playing ? (
-
-                        <a onClick={() => videoHandler("pause")} class="btn-trailer video-btn">
-                            <img className="controlsIcon--small video-play" alt="" src="/pause.svg"/> &nbsp; Resume 
-                        </a>
-                        
-                        ) : (
-                        <a onClick={() => videoHandler("play")} class="btn-trailer video-btn">
-                            <img className="controlsIcon--small video-play" alt="" src="/play.svg"/> &nbsp; Resume
-                        </a>
-                        )}
-                        <div class="video-btn-like-row">
-                            <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                            <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                        </div>
-                        {/* <img onClick={fastForward} className="controlsIcon" alt="" src="/forward-5.svg"/> */}
-                    </div>
-                    </div>
-                    <div className="timecontrols">
-                    
-                        <div className="time_progressbarContainer">
-                            <div style={{ width: `${progress}%` }} className="time_progressBar"></div>
-                        </div>
-                        <div class="movie-time-control">
-                            <p className="controlsTime">{Math.floor(videoTime / 60) + ":" + ("0" + Math.floor(videoTime % 60)).slice(-2)}</p>
-                            &nbsp; &nbsp; <p> of </p> &nbsp; &nbsp;
-                            <p className="controlsTime">{Math.floor(currentTime / 60) + ":" + ("0" + Math.floor(currentTime % 60)).slice(-2)}</p>
-                        </div>
-                    </div>
-                     {/* // Volume Control Range slider */} 
-                    {/* <input
-                        type="range"
-                        defaultValue="0"
-                        className="mx-2 progressBarvolume bar volume"
-                    /> */}
-                    
-                        
-                    
-                     {/* <input
-                        type="range"
-                        className="progressBar bar"
-                        defaultValue="0"
-                        ref={progressBar}
-                        onChange={changeRange}
-                    /> */}                     
-                    
-                    </section>
-
-                    <section class="home-popup-s2-row" >
-                        <container class="home-popup-s2-col home-popup-s2-p1">
-                            <img src="https://i.pinimg.com/236x/c1/2b/d7/c12bd72009000fa249ee4260b2b9b4c5--english-movies-hollywood.jpg"></img>
-                        </container>
-
-                        <container class="home-popup-s2-col home-popup-s2-p2">
-
-                            <div class="popup-s2-btn-row">
-                                <a class="popup-s2-btn-col">Crime</a>
-                                <a class="popup-s2-btn-col">Drama</a>
-                                <a class="popup-s2-btn-col">Mystery</a>
-                            </div>
-
-                            <div class="popup-s2-movie-title">
-                                <h1>The Marshal King</h1>
-                            </div>
-
-                            <div class="popup-s2-rait-row rait-star">
-                                <a class="popup-s2-rait-col imbd">IMDB</a>
-                                <h5 class="popup-s2-rait-col points">8.5</h5>
-                                <div class="popup-s2-rait-col stars">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star grey" aria-hidden="true"></i>
-                                </div>
-                            </div>
-
-                            <div class="popup-s2-rait-row time-movie">
-                                <div class="popup-s2-rait-col age"><a>18+</a></div>
-                                <div class="popup-s2-rait-col movie-time">2h 12m </div>
-                                <div class="popup-s2-rait-col quality"><a>HD</a></div>
-                                <div class="popup-s2-rait-col year">2022</div>
-                            </div>
-
-                            <div class="popup-s2-rait-row add-favrt">
-                                <div class="popup-s2-rait-col squre-dil"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                                <div class="popup-s2-rait-col favourite"><h5>Add to Favourites</h5></div>
-                            </div>
-
-                            <div class="popup-s2-rait-row-content" >
-                                <h5>Lorem ipsum dilorr ammet, consectur adispgn ddeit, sed it ells, tempor me so widll addcteid him form us </h5>
-                            </div>
-
-                        </container>
-
-                        <container class="home-popup-s2-col home-popup-s2-p3">
-                            <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
-                            <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
-                            <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
-                        </container>
-
-                    </section>
-
-                    <section class="box-shadow-top">
-                        
-                            <div>
-                                <div class="more-like">
-                                    More Like This  
-                                </div>
-                                <div className='relative flex items-center'>
-                                    <span class="show-arrow"><MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft2} size={40} /></span>
-                                    <div id='slider2' className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                                    {data.map((item) => (
-                                        <div class="row-slide-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                                        <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img} alt='/' />
-                                        <div class="overlay">
-                                            <div class="overlay-box">
-                                                <div class="overlay-parts overlay-part1">
-                                                    <h4>Boop Bitty</h4>
-                                                    <div class="part1-1">
-                                                        <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                                    </div>
-                                                    <div class="part1-2 slide_right">
-                                                        <a  class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
-                                                    </div>
-                                                </div>
-                                                <div class="overlay-parts overlay-part2">
-                                                    <div class="part2-1"><a href=""><i class="fa fa-volume-down"></i></a></div>
-                                                    <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                                    <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                                                </div>
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
-                                        
-                                    ))}
-                                    </div >
-                                    <span class="show-arrow"><MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight2} size={40}  /></span>
-                                </div> 
-                            </div> 
-
-
-                            {/* SLIDER LIST TWO 2 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-                            <div class="stv-hm-rs-main">
-                                <div class="stv-hm-rs-box1" >
-                                {/* {languagedata.your_fovourites}  */}
-                                your_fovourites   
-                                    <a>
-                                        {/* {languagedata.see_all} */}
-                                        see_all
-                                    </a>
-                                </div>
-                                <div className='stv-hm-rs-box2 relative flex items-center'  >
-                                    <span class="stv-hm-rs-box2-p1 show-arrow">
-                                        <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft6} size={40} />
-                                    </span>
-                                    <div id='slider6' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide' >
-                                        {data.map((item) => (
-                                            <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                                                <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img}  alt='/'/>
-                                                <div class="overlay">
-                                                    <div class="overlay-box">
-                                                        <div class="overlay-parts overlay-part1">
-                                                            <h4>Boop Bitty</h4>
-                                                            <div class="part1-1">
-                                                                <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                                            </div>
-                                                            <div class="part1-2 slide_right">
-                                                                <a onClick={openModal} class="btn-trailer">
-                                                                    <i class="fa-solid fa-play"></i> Play Now
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="overlay-parts overlay-part2">
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa fa-volume-down"></i></a>
-                                                            </div>
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa-solid fa-heart"></i></a>
-                                                            </div>
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa-solid fa-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div >
-                                    <span class="stv-hm-rs-box2-p3 show-arrow">
-                                        <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight6} size={40}  />
-                                    </span>
-                                </div> 
-                            </div> 
-                            {/* SLIDER LIST TWO 2 ENDS =========================================================*/} 
-
-                            {/* SLIDER LIST THREE 3 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++*/} 
-                            <div class="stv-hm-rs-main">
-                                <div class="stv-hm-rs-box1" >
-                                {/* {languagedata.featured_movies_to_watch_now} */}
-                                featured movies to watch now
-                                    <a>
-                                        {/* {languagedata.see_all} */}
-                                        see all
-                                    </a>
-                                </div>
-                                <div className='stv-hm-rs-box2 relative flex items-center'  >
-                                    <span class="stv-hm-rs-box2-p1 show-arrow">
-                                        <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft5} size={40} />
-                                    </span>
-                                    <div id='slider5' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                                        {data.map((item) => (
-                                            <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                                                <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img} alt='/' />
-                                                <div class="overlay">
-                                                    <div class="overlay-box">
-                                                        <div class="overlay-parts overlay-part1">
-                                                            <h4>Boop Bitty</h4>
-                                                            <div class="part1-1">
-                                                                <span class="movie-about views">16+</span>
-                                                                <span class="movie-about">2h 40m</span>
-                                                            </div>
-                                                            <div class="part1-2 slide_right">
-                                                                <a  onClick={openModal} class="btn-trailer">
-                                                                    <i class="fa-solid fa-play"></i> Play Now
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="overlay-parts overlay-part2">
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa fa-volume-down"></i></a>
-                                                            </div>
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa-solid fa-heart"></i></a>
-                                                            </div>
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa-solid fa-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <span class="stv-hm-rs-box2-p3 show-arrow">
-                                        <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight5} size={40}  />
-                                    </span>
-                                </div> 
-                            </div> 
-                            {/* SLIDER LIST THREE 3 ENDS =========================================================*/}
-
-                            {/* SLIDER LIST FOUR 4 STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-                            <div class="stv-hm-rs-main">
-                                <div class="stv-hm-rs-box1" >
-                                    {/* {languagedata.upcoming_movies}    */}
-                                    upcoming_movies 
-                                    <a>
-                                        {/* {languagedata.see_all} */}
-                                        see_all
-                                    </a>
-                                </div>
-                                <div className='stv-hm-rs-box2 relative flex items-center'  >
-                                    <span class="stv-hm-rs-box2-p1 show-arrow">
-                                        <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft4} size={40} />
-                                    </span>
-                                    <div id='slider4' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                                        {data.map((item) => (
-                                            <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                                                <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img} alt='/'/>
-                                                <div class="overlay">
-                                                    <div class="overlay-box">
-                                                        <div class="overlay-parts overlay-part1">
-                                                            <h4>Boop Bitty</h4>
-                                                            <div class="part1-1">
-                                                                <span class="movie-about views">16+</span>
-                                                                <span class="movie-about">2h 40m</span>
-                                                            </div>
-                                                            <div class="part1-2 slide_right">
-                                                                <a  onClick={openModal} class="btn-trailer">
-                                                                    <i class="fa-solid fa-play"></i> Play Now
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="overlay-parts overlay-part2">
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa fa-volume-down"></i></a>
-                                                            </div>
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa-solid fa-heart"></i></a>
-                                                            </div>
-                                                            <div class="part2-1">
-                                                                <a href=""><i class="fa-solid fa-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <span class="stv-hm-rs-box2-p3 show-arrow">
-                                        <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight4} size={40}  />
-                                    </span>
-                                </div> 
-                            </div> 
-                            {/* SLIDER LIST FOUR 4 ENDS =========================================================*/}
-                        
-                    </section>
-                </container>
-            </main>
-        
-        </Modal>
-        <Modal
-        isOpen={SeasonmodalIsOpen}
-        onAfterOpen={SeasonafterOpenModal}
-        onRequestClose={SeasoncloseModal}
-        contentLabel="Example Modal"
-        class="modal-class"
-      >
-        {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
-        {/* <button onClick={closeModal}>close</button> */}
-        <main class="home-popup web-bg-color">
-                <container class="home-popup-box">
-                    <section class="home-popup-s1">
-                    {/* video li width or heihgt 100% krni hai or baher wali div ki height adjust krni hai */}
-                    <div class="video-box">
-                         <video id="video1" ref={videoRef} className="video" src="/video.mp4"  autoplay="autoplay"></video> 
-                        {/* <video id="video1" ref={videoRef} className="video" src={selectedmoviedata.trailer}  autoplay="autoplay"></video> */}
-                    </div>
-                    
-                    <div className="controlsContainer">
-
-                        <div class="audio-control audio-control-row">
-                            {/* <img className="video-play-center" alt="" src="/audioIcon.gif"/>  setMuted(m => !m) */}
-                            <div class="audio-btn-box audio-control-col opacity">
-                            {ismuted ? (
-
-                                
-                                <a   class="center-video-btn audio-play-center">
-                                    
-                                    <i className="fa fa-volume-up" style={{fontSize:"36px", color:"whitesmoke"}} onClick={() =>isMuted() }></i>
-                                </a>
-                                ) : (
-                                <a   class="center-video-btn audio-play-center">
-                                    <i className="fas fa-volume-mute" style={{fontSize:"36px", color:"whitesmoke"}} onClick={() =>isMutedOff() }></i>
-                                </a>
-                            
-                            )}
-                            </div>
-                            <div class="audio-control-col audio-bar input-row">
-                                <input  class="input-col"
-                                    type="range"
-                                    min={0}
-                                    max={1}
-                                    step={0.02}
-                                    value={volume}
-                                    onChange={event => {
-                                        setVolume(event.target.valueAsNumber)
-                                        const resetVolume =event.target.valueAsNumber/10;
-                                        /* console.log (typeof(resetVolume))
-                                        console.log (typeof(videoRef.current.volume)) */
-                                        videoRef.current.volume = resetVolume;
-                                        console.log(videoRef.current.volume)
-
-                                }}
-                                />
-                                {/* <button onClick={() => setMuted(m => !m)}>
-                                    {muted ? "muted" : "unmuted"}
-                                </button> */}
-                                <p class="input-col"> &nbsp;{(finalVolume.toFixed(1)*100)}</p>
-                            </div>
-
-                            
-                        </div>
-
-                    <div class="center-box opacity">
-                        {playing ? (
-                        <a onClick={() => videoHandler("pause")} class="center-video-btn">
-                            <img className="controlsIcon--small video-play-center" alt="" src="/pause.svg"/> 
-                        </a>
-
-                        ) : (
-                        <a onClick={() => videoHandler("play")} class="center-video-btn">
-                            <img className="controlsIcon--small video-play-center" alt="" src="/play.svg"/>
-                        </a>
-                        )}
-                    </div>
-
-                    <div className="controls">
-                        {/* <img onClick={revert} className="controlsIcon" alt="" src="/backward-5.svg"/> */}
-                        <div class="video-title"><h2>THE MARSHAL KING </h2></div>
-                    {playing ? (
-
-                        <a onClick={() => videoHandler("pause")} class="btn-trailer video-btn">
-                            <img className="controlsIcon--small video-play" alt="" src="/pause.svg"/> &nbsp; Resume 
-                        </a>
-                        
-                        ) : (
-                        <a onClick={() => videoHandler("play")} class="btn-trailer video-btn">
-                            <img className="controlsIcon--small video-play" alt="" src="/play.svg"/> &nbsp; Resume
-                        </a>
-                        )}
-                        <div class="video-btn-like-row">
-                            <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                            <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                        </div>
-                        {/* <img onClick={fastForward} className="controlsIcon" alt="" src="/forward-5.svg"/> */}
-                    </div>
-                    </div>
-                    <div className="timecontrols">
-                    
-                        <div className="time_progressbarContainer">
-                            <div style={{ width: `${progress}%` }} className="time_progressBar"></div>
-                        </div>
-                        <div class="movie-time-control">
-                            <p className="controlsTime">{Math.floor(videoTime / 60) + ":" + ("0" + Math.floor(videoTime % 60)).slice(-2)}</p>
-                            &nbsp; &nbsp; <p> of </p> &nbsp; &nbsp;
-                            <p className="controlsTime">{Math.floor(currentTime / 60) + ":" + ("0" + Math.floor(currentTime % 60)).slice(-2)}</p>
-                        </div>
-                    </div>
-                     {/* // Volume Control Range slider */} 
-                    {/* <input
-                        type="range"
-                        defaultValue="0"
-                        className="mx-2 progressBarvolume bar volume"
-                    /> */}
-                    
-                        
-                    
-                     {/* <input
-                        type="range"
-                        className="progressBar bar"
-                        defaultValue="0"
-                        ref={progressBar}
-                        onChange={changeRange}
-                    /> */}                     
-                    
-                    </section>
-
-                    <section class="home-popup-s2-row" >
-                        <container class="home-popup-s2-col home-popup-s2-p1">
-                            <img src="https://i.pinimg.com/236x/c1/2b/d7/c12bd72009000fa249ee4260b2b9b4c5--english-movies-hollywood.jpg"></img>
-                        </container>
-
-                        <container class="home-popup-s2-col home-popup-s2-p2">
-
-                            <div class="popup-s2-btn-row">
-                                <a class="popup-s2-btn-col">Crime</a>
-                                <a class="popup-s2-btn-col">Drama</a>
-                                <a class="popup-s2-btn-col">Mystery</a>
-                            </div>
-
-                            <div class="popup-s2-movie-title">
-                                <h1>The Marshal King</h1>
-                            </div>
-
-                            <div class="popup-s2-rait-row rait-star">
-                                <a class="popup-s2-rait-col imbd">IMDB</a>
-                                <h5 class="popup-s2-rait-col points">8.5</h5>
-                                <div class="popup-s2-rait-col stars">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star grey" aria-hidden="true"></i>
-                                </div>
-                            </div>
-
-                            <div class="popup-s2-rait-row time-movie">
-                                <div class="popup-s2-rait-col age"><a>18+</a></div>
-                                <div class="popup-s2-rait-col movie-time">2h 12m </div>
-                                <div class="popup-s2-rait-col quality"><a>HD</a></div>
-                                <div class="popup-s2-rait-col year">2022</div>
-                            </div>
-
-                            <div class="popup-s2-rait-row add-favrt">
-                                <div class="popup-s2-rait-col squre-dil"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                                <div class="popup-s2-rait-col favourite"><h5>Add to Favourites</h5></div>
-                            </div>
-
-                            <div class="popup-s2-rait-row-content" >
-                                <h5>Lorem ipsum dilorr ammet, consectur adispgn ddeit, sed it ells, tempor me so widll addcteid him form us </h5>
-                            </div>
-
-                        </container>
-
-                        <container class="home-popup-s2-col home-popup-s2-p3">
-                            <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
-                            <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
-                            <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
-                        </container>
-
-                    </section>
-
-                    <section class="box-shadow-top">
-                         
-                             
-                            <div>
-                            <div style={{ backgroundColor:"#0d0d31", color:"white", padding:"8px 52px 0",fontSize:"18px", fontWeight:"bold"}}>Episodes season 1  </div>
-                            <div className='relative flex items-center' style={{ backgroundColor:"#0d0d31"}} >
-                            <span class="show-arrow"><MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft4} size={40} /></span>
-                            <div
-                            id='slider4'
-                            className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
-                            style={{padding:"13px 0"}}>
-                            {data.map((item) => (
-                                <div class="container  inline-block p-2 hover:scale-105 ease-in-out duration-300" style={{ width:"200px"}}>
-                                <img
-                                className='list-images inline-block hover:scale-105 ease-in-out duration-300'
-                                src={item.img}
-                                alt='/'
-                                />
-                                <div class="overlay">
-                                <div class="overlay-box">
-                                                        <div class="overlay-parts overlay-part1">
-                                                            <h4>Boop Bitty</h4>
-                                                            <div class="part1-1">
-                                                                <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                                            </div>
-                                                            <div class="part1-2 slide_right">
-                                                                <a href="https://www.youtube.com/watch?v=zJgHbifIx-Q" class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="overlay-parts overlay-part2">
-                                                            <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                                            <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                                            <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                                                        </div>
-                                                    </div>
-                                
-                                </div>
-                            </div>
-                                
-                            ))}
-                            </div >
-                            <span class="show-arrow"><MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight4} size={40}  /></span>
-                            </div> 
-                            </div> 
-                        
-                    </section>
-                </container>
-            </main>
-        
-        </Modal> 
-             {/* HOME PAGE MODAL ENDS ================================================================================= */}
-
-<main class="web-bg-color">
-
-      {isShown && (<Header/>)}
-        {/* <video id="video1" ref={videoRef} className="video" src="http://localhost:7000/static/trailer_1668071025491.mp4"></video>
-         <div className="controlsContainer">
-        <div className="controls">
-            <img onClick={revert} className="controlsIcon" alt="" src="/backward-5.svg"/>
-          {playing ? (
-            <img onClick={() => videoHandler("pause")} className="controlsIcon--small" alt="" src="/pause.svg"/>
-            ) : (
-            <img onClick={() => videoHandler("play")} className="controlsIcon--small" alt="" src="/play.svg"/>
-            )}
-          <img onClick={fastForward} className="controlsIcon" alt="" src="/forward-5.svg"/>
-        </div>
-      </div>
-      <div className="timecontrols">
-      <p className="controlsTime">{Math.floor(videoTime / 60) + ":" + ("0" + Math.floor(videoTime % 60)).slice(-2)}</p>
-        <div className="time_progressbarContainer">
-          <div style={{ width: `${progress}%` }} className="time_progressBar"></div>
-        </div>
-        <p className="controlsTime">{Math.floor(currentTime / 60) + ":" + ("0" + Math.floor(currentTime % 60)).slice(-2)}</p>
-    </div> */}
-    
-    
-    <div class="fullwidth-slider first-page-slider">
-    <div>
-      {/* <button onClick={openModal}>Open Modal</button> */}
-      
-    </div>
-             
-            <div class="home-gradient-1">
-            </div> 
-        </div> 
-
-        {/* LINEAR GRADIENT STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-        
-        {/* LINEAR GRADIENT ENDS ============================================================*/}
-         {/* this problem code start */}
-
-        {/* SLIDER LIST ONE 1 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-
-        <div class="stv-hm-rs-main mobile-margin">
-            
-            <div class="stv-hm-rs-box1 first-hm-heading" >
-            {/* {languagedata.trendin_see_all} */}
-                trending
-                <a>
-                    {/* {languagedata.see_all} */}
-                    see_all
-                </a>
-            </div>
-            <div className='stv-hm-rs-box2 relative flex items-center'  >
-                <span class="stv-hm-rs-box2-p1 show-arrow">
-                    <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft7} size={40} />
-                </span>
-                <div id='slider7' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                    {data.map((item) => (
-                    <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                        <img className='list-images inline-block hover:scale-105 ease-in-out duration-300'  src={item.img}  alt='/' />
-                        <div class="overlay">
-                            <div class="overlay-box">
-                                <div class="overlay-parts overlay-part1">
-                                    <h4>Boop Bitty</h4>
-                                    <div class="part1-1">
-                                        <span class="movie-about views">16+</span>
-                                        <span class="movie-about">2h 40m</span>
-                                    </div>
-                                    <div class="part1-2 slide_right">
-                                        <a  /* onClick={openModal} */ onClick={(event) => { selectedMovies(event,item); openModal();}} class="btn-trailer">
-                                            <i class="fa-solid fa-play"></i> Play Now
-                                        </a>
-                                        <input type="hidden"/>
-                                    </div>
-                                </div>
-                                <div class="overlay-parts overlay-part2">
-                                    <div class="part2-1">
-                                        <a href="">
-                                            <i class="fa fa-volume-down"></i>
-                                        </a>
-                                    </div>
-                                    <div class="part2-1">
-                                        <a href=""><i class="fa-solid fa-heart"></i></a>
-                                    </div>
-                                    <div class="part2-1">
-                                        <a href=""><i class="fa-solid fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ))}
-                </div >
-                <span class="stv-hm-rs-box2-p3 show-arrow">
-                    <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight7} size={40}  />
-                </span>
-            </div> 
-        </div>
-         {/* SLIDER LIST ONE 1 ENDS =========================================================*/} 
-
-        {/*dont touch umar*/}
-        {/* <div>
-        <div >TV Thrillers  <a>see all</a></div>
-         <div className='relative flex items-center'  >
-        <span class="show-arrow"><MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft7} size={40} /></span>
-        <div
-          id='slider7'
-          className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
-        >
-          {dbdata.map((item) => (
-            <div class="container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-            <img
-              className='list-images inline-block hover:scale-105 ease-in-out duration-300'
-              src={item.thumbnail}
-              alt='/'
-            />
-            <div class="overlay">
-            <div class="overlay-box">
-                                      <div class="overlay-parts overlay-part1">
-                                          <h4>Boop Bitty</h4>
-                                          <div class="part1-1">
-                                              <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                          </div>
-                                          <div class="part1-2 slide_right">
-                                              <a  onClick={(event) => { selectedMovies(event,item); openModal();}}class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
-                                              <input type="hidden"/>
-                                          </div>
-                                      </div>
-                                      <div class="overlay-parts overlay-part2">
-                                          <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                          <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                          <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                                      </div>
-                                  </div>
-              
-            </div>
-          </div>
-            
-          ))}
-        </div >
-        <span class="show-arrow"><MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight7} size={40}  /></span>
-      </div> 
-        </div> */}
-        {/*dont touch above  */}
-
-         {/* SLIDER LIST TWO 2 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-        <div class="stv-hm-rs-main">
-            <div class="stv-hm-rs-box1" >
-            {/* {languagedata.your_fovourites}  */}
-            your_fovourites   
-                <a>
-                    {/* {languagedata.see_all} */}
-                    see_all
-                </a>
-            </div>
-            <div className='stv-hm-rs-box2 relative flex items-center'  >
-                <span class="stv-hm-rs-box2-p1 show-arrow">
-                    <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft6} size={40} />
-                </span>
-                <div id='slider6' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide' >
-                    {data.map((item) => (
-                        <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                            <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img}  alt='/'/>
-                            <div class="overlay">
-                                <div class="overlay-box">
-                                    <div class="overlay-parts overlay-part1">
-                                        <h4>Boop Bitty</h4>
-                                        <div class="part1-1">
-                                            <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                        </div>
-                                        <div class="part1-2 slide_right">
-                                            <a onClick={openModal} class="btn-trailer">
-                                                <i class="fa-solid fa-play"></i> Play Now
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="overlay-parts overlay-part2">
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa fa-volume-down"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div >
-                <span class="stv-hm-rs-box2-p3 show-arrow">
-                    <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight6} size={40}  />
-                </span>
-            </div> 
-        </div> 
-        {/* SLIDER LIST TWO 2 ENDS =========================================================*/} 
-
-        {/* SLIDER LIST THREE 3 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++*/} 
-        <div class="stv-hm-rs-main">
-            <div class="stv-hm-rs-box1" >
-             {/* {languagedata.featured_movies_to_watch_now} */}
-             featured movies to watch now
-                <a>
-                    {/* {languagedata.see_all} */}
-                    see all
-                </a>
-            </div>
-            <div className='stv-hm-rs-box2 relative flex items-center'  >
-                <span class="stv-hm-rs-box2-p1 show-arrow">
-                    <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft5} size={40} />
-                </span>
-                <div id='slider5' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                    {data.map((item) => (
-                        <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                            <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img} alt='/' />
-                            <div class="overlay">
-                                <div class="overlay-box">
-                                    <div class="overlay-parts overlay-part1">
-                                        <h4>Boop Bitty</h4>
-                                        <div class="part1-1">
-                                            <span class="movie-about views">16+</span>
-                                            <span class="movie-about">2h 40m</span>
-                                        </div>
-                                        <div class="part1-2 slide_right">
-                                            <a  onClick={openModal} class="btn-trailer">
-                                                <i class="fa-solid fa-play"></i> Play Now
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="overlay-parts overlay-part2">
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa fa-volume-down"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <span class="stv-hm-rs-box2-p3 show-arrow">
-                    <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight5} size={40}  />
-                </span>
-            </div> 
-        </div> 
-        {/* SLIDER LIST THREE 3 ENDS =========================================================*/}
-
-        {/* SLIDER LIST FOUR 4 STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-        <div class="stv-hm-rs-main">
-            <div class="stv-hm-rs-box1" >
-                  {/* {languagedata.upcoming_movies}    */}
-                  upcoming_movies 
-                <a>
-                    {/* {languagedata.see_all} */}
-                    see_all
-                </a>
-            </div>
-            <div className='stv-hm-rs-box2 relative flex items-center'  >
-                <span class="stv-hm-rs-box2-p1 show-arrow">
-                    <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft4} size={40} />
-                </span>
-                <div id='slider4' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                    {data.map((item) => (
-                        <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                            <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img} alt='/'/>
-                            <div class="overlay">
-                                <div class="overlay-box">
-                                    <div class="overlay-parts overlay-part1">
-                                        <h4>Boop Bitty</h4>
-                                        <div class="part1-1">
-                                            <span class="movie-about views">16+</span>
-                                            <span class="movie-about">2h 40m</span>
-                                        </div>
-                                        <div class="part1-2 slide_right">
-                                            <a  onClick={openModal} class="btn-trailer">
-                                                <i class="fa-solid fa-play"></i> Play Now
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="overlay-parts overlay-part2">
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa fa-volume-down"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <span class="stv-hm-rs-box2-p3 show-arrow">
-                    <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight4} size={40}  />
-                </span>
-            </div> 
-        </div> 
-         {/* SLIDER LIST FOUR 4 ENDS =========================================================*/}
-         {/* there is problem code ends */}
-
-         {/* HOMEPAGE CENTER SLIDER 2 VIDEO SLIDER STARTS ++++++++++++++++++++++++++++++++++++++++++ */}
-        {/* new */}  
-         
-        {/* HOMEPAGE CENTER SLIDER 2 VIDEO SLIDER ENDS ============================================= */}
-
-        {/* <div style={{ marginBottom:"20px", height:"250px", border:"2px solid green", backgroundColor:"#0d0d31"}}>
-            <div style={{ backgroundColor:"#0d0d31", color:"white", padding:"8px", height : "20%", width:"100%"}}>Trending see all <a style={{color:"red"}}>see all</a></div>
-              <div className='relative flex items-center'  >
-                  <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100  text-[#FFFFFF]' onClick={slideLeft6} size={40} />
-                  <div id='slider6'className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                    <div style={{height:"70%", width:"100%"}}>
-                    {data.map((item) => (
-                      <div style={{border:"3px solid yellow"}} className='w-[200px] h-[110px] inline-block p-2 cursor-pointer '>
-                        <div className='w-[200px] h-[110px] coming-slider-item' >
-                              <img  src={item.img}  alt='/' />
-                              <div class="overlay">
-                                  <div class="overlay-box">
-                                      <div class="overlay-parts overlay-part1">
-                                          <h4>Boop Bitty</h4>
-                                          <div class="part1-1">
-                                              <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                          </div>
-                                          <div class="part1-2 slide_right">
-                                              <a  class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
-                                          </div>
-                                      </div>
-                                      <div class="overlay-parts overlay-part2">
-                                          <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                          <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                          <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div >
-                      </div>
-                    ))}
-
-                    </div>
-                    
-                  </div>
-                  <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 text-[#FFFFFF] ' onClick={slideRight6} size={40}  />
-            
-                </div>
-        </div > */}
-
-        {/* SLIDER LIST FIVE 5 STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-        <div class="stv-hm-rs-main stv-hm-rs-last">
-            <div class="stv-hm-rs-box1" >
-                {/* {languagedata.tv_thrillers}   */}
-                tv_thrillers
-                <a>
-                    {/* {languagedata.see_all} */}
-                    see_all
-                </a>
-            </div>
-            <div className='stv-hm-rs-box2 relative flex items-center'  >
-                <span class="stv-hm-rs-box2-p1 show-arrow">
-                    <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft3} size={40} />
-                </span>
-                <div id='slider3' className='stv-hm-rs-box2-p2 w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                    {data.map((item) => (
-                        <div class="stv-hm-rs-box2-p2-box container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                            <img className='list-images inline-block hover:scale-105 ease-in-out duration-300' src={item.img} alt='/'/>
-                            <div class="overlay">
-                                <div class="overlay-box">
-                                    <div class="overlay-parts overlay-part1">
-                                        <h4>Boop Bitty</h4>
-                                        <div class="part1-1">
-                                            <span class="movie-about views">16+</span>
-                                            <span class="movie-about">2h 40m</span>
-                                        </div>
-                                        <div class="part1-2 slide_right">
-                                            <a  onClick={SeasonopenModal} class="btn-trailer">
-                                                <i class="fa-solid fa-play"></i> Play Now
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="overlay-parts overlay-part2">
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa fa-volume-down"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </div>
-                                        <div class="part2-1">
-                                            <a href=""><i class="fa-solid fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div >
-                <span class="stv-hm-rs-box2-p3 show-arrow">
-                    <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight3} size={40}  />
-                </span>
-            </div> 
+            <>
+            {languagesate && ( 
+               <div>  
+                   {/* HOME PAGE MODAL STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+                   <Modal
+                   isOpen={modalIsOpen}
+                   onAfterOpen={afterOpenModal}
+                   onRequestClose={closeModal}
+                   contentLabel="Example Modal"
+                   class="modal-class"
+                 >
+                   {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
+                   {/* <button onClick={closeModal}>close</button> */}
+                   <main class="home-popup web-bg-color">
+                           <container class="home-popup-box">
+                               <section class="home-popup-s1">
+                               {/* video li width or heihgt 100% krni hai or baher wali div ki height adjust krni hai */}
+                               <div class="video-box">
+                                    <video id="video1" ref={videoRef} className="video" src="/video.mp4"  autoplay="autoplay"></video> 
+                                   {/* <video id="video1" ref={videoRef} className="video" src={selectedmoviedata.trailer}  autoplay="autoplay"></video> */}
+                               </div>
+                               
+                               <div className="controlsContainer">
            
-        </div> 
-        {/* SLIDER LIST FIVE 5 ENDS =============================================================*/}    
-        {isShown && (<WebFooter/>)}   
-</main>
-</div>
-    )}
-                  </>
-        
+                                   <div class="audio-control audio-control-row">
+                                       {/* <img className="video-play-center" alt="" src="/audioIcon.gif"/>  setMuted(m => !m) */}
+                                       <div class="audio-btn-box audio-control-col opacity">
+                                       {ismuted ? (
+           
+                                           
+                                           <a   class="center-video-btn audio-play-center">
+                                               <i className="fa fa-volume-up" onClick={() =>isMuted() }></i>
+                                           </a>
+                                           ) : (
+                                           <a   class="center-video-btn audio-play-center">
+                                               <i className="fas fa-volume-mute" onClick={() =>isMutedOff() }></i>
+                                           </a>
+                                       
+                                       )}
+                                       </div>
+                                       <div class="audio-control-col audio-bar input-row">
+                                           <input  class="input-col"
+                                               type="range"
+                                               min={0}
+                                               max={1}
+                                               step={0.02}
+                                               value={volume}
+                                               onChange={event => {
+                                                   setVolume(event.target.valueAsNumber)
+                                                   const resetVolume =event.target.valueAsNumber/10;
+                                                   /* console.log (typeof(resetVolume))
+                                                   console.log (typeof(videoRef.current.volume)) */
+                                                   videoRef.current.volume = resetVolume;
+                                                   console.log(videoRef.current.volume)
+           
+                                           }}
+                                           />
+                                           {/* <button onClick={() => setMuted(m => !m)}>
+                                               {muted ? "muted" : "unmuted"}
+                                           </button> */}
+                                           <p class="input-col"> &nbsp;{(finalVolume.toFixed(1)*100)}</p>
+                                       </div>
+           
+                                       
+                                   </div>
+           
+                               <div class="center-box opacity">
+                                   {playing ? (
+                                   <a onClick={() => videoHandler("pause")} class="center-video-btn">
+                                       <img className="controlsIcon--small video-play-center" alt="" src="/pause.svg"/> 
+                                   </a>
+           
+                                   ) : (
+                                   <a onClick={() => videoHandler("play")} class="center-video-btn">
+                                       <img className="controlsIcon--small video-play-center" alt="" src="/play.svg"/>
+                                   </a>
+                                   )}
+                               </div>
+           
+                               <div className="controls">
+                                   {/* <img onClick={revert} className="controlsIcon" alt="" src="/backward-5.svg"/> */}
+                                   <div class="video-title"><h2>THE MARSHAL KING </h2></div>
+                               {playing ? (
+           
+                                   <a onClick={() => videoHandler("pause")} class="btn-trailer video-btn">
+                                       <img className="controlsIcon--small video-play" alt="" src="/pause.svg"/> &nbsp; Resume 
+                                   </a>
+                                   
+                                   ) : (
+                                   <a onClick={() => videoHandler("play")} class="btn-trailer video-btn">
+                                       <img className="controlsIcon--small video-play" alt="" src="/play.svg"/> &nbsp; Resume
+                                   </a>
+                                   )}
+                                   <div class="video-btn-like-row">
+                                       <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                       <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-plus"></i></a></div>
+                                   </div>
+                                   {/* <img onClick={fastForward} className="controlsIcon" alt="" src="/forward-5.svg"/> */}
+                               </div>
+                               </div>
+                               <div className="timecontrols">
+                               
+                                   <div className="time_progressbarContainer">
+                                       <div style={{ width: `${progress}%` }} className="time_progressBar"></div>
+                                   </div>
+                                   <div class="movie-time-control">
+                                       <p className="controlsTime">{Math.floor(videoTime / 60) + ":" + ("0" + Math.floor(videoTime % 60)).slice(-2)}</p>
+                                       &nbsp; &nbsp; <p> of </p> &nbsp; &nbsp;
+                                       <p className="controlsTime">{Math.floor(currentTime / 60) + ":" + ("0" + Math.floor(currentTime % 60)).slice(-2)}</p>
+                                   </div>
+                               </div>
+                                {/* // Volume Control Range slider */} 
+                               {/* <input
+                                   type="range"
+                                   defaultValue="0"
+                                   className="mx-2 progressBarvolume bar volume"
+                               /> */}
+                               
+                                   
+                               
+                                {/* <input
+                                   type="range"
+                                   className="progressBar bar"
+                                   defaultValue="0"
+                                   ref={progressBar}
+                                   onChange={changeRange}
+                               /> */}                     
+                               
+                               </section>
+           
+                               <section class="home-popup-s2-row" >
+                                   <container class="home-popup-s2-col home-popup-s2-p1">
+                                       <img src="https://i.pinimg.com/236x/c1/2b/d7/c12bd72009000fa249ee4260b2b9b4c5--english-movies-hollywood.jpg"></img>
+                                   </container>
+           
+                                   <container class="home-popup-s2-col home-popup-s2-p2">
+           
+                                       <div class="popup-s2-btn-row">
+                                           <a class="popup-s2-btn-col">Crime</a>
+                                           <a class="popup-s2-btn-col">Drama</a>
+                                           <a class="popup-s2-btn-col">Mystery</a>
+                                       </div>
+           
+                                       <div class="popup-s2-movie-title">
+                                           <h1>The Marshal King</h1>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row rait-star">
+                                           <a class="popup-s2-rait-col imbd">IMDB</a>
+                                           <h5 class="popup-s2-rait-col points">8.5</h5>
+                                           <div class="popup-s2-rait-col stars">
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star grey" aria-hidden="true"></i>
+                                           </div>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row time-movie">
+                                           <div class="popup-s2-rait-col age"><a>18+</a></div>
+                                           <div class="popup-s2-rait-col movie-time">2h 12m </div>
+                                           <div class="popup-s2-rait-col quality"><a>HD</a></div>
+                                           <div class="popup-s2-rait-col year">2022</div>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row add-favrt">
+                                           <div class="popup-s2-rait-col squre-dil"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                                           <div class="popup-s2-rait-col favourite"><h5>Add to Favourites</h5></div>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row-content" >
+                                           <h5>Lorem ipsum dilorr ammet, consectur adispgn ddeit, sed it ells, tempor me so widll addcteid him form us </h5>
+                                       </div>
+           
+                                   </container>
+           
+                                   <container class="home-popup-s2-col home-popup-s2-p3">
+                                       <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
+                                       <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
+                                       <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
+                                   </container>
+           
+                               </section>
+           
+                               <section class="box-shadow-top">
+                                   
+                               <div class="stv-hp-row">
+                                   <div class="stv-hp-header">
+                                   <h3 class="title stv-hm-rs-box1">More like this</h3>
+                                   <div class="stv-hp-progress-bar">
+                                       <div class="progress-item"></div>
+                                       <div class="progress-item"></div>
+                                       <div class="progress-item"></div>
+                                   </div>
+                                   </div>
+                                   <div class="stv-hp-container">
+                                   <button class="handle left-handle">
+                                       <div class="text">
+                                           <i class="fa fa-angle-left"></i>
+                                       </div>
+                                   </button>
+                                   <div class="stv-hp-slider">
+                                       {data.map((item) => (
+                                       // <div class="stv-hp-slidein">
+                                           <div  class="stv-hp-movie">
+                                               <img class="list-images-movie" src={item.img} />
+                                               <div class="overlay-movie">
+                                                   <div class="overlay-box">
+                                                       <div class="overlay-parts overlay-part1">
+                                                           <h4>Boop Bitty</h4>
+                                                           <div class="part1-1">
+                                                               <span class="movie-about views">16+</span>
+                                                               <span class="movie-about">2h 40m</span>
+                                                           </div>
+                                                           <div class="part1-2 slide_right">
+                                                               <a class="btn-trailer" onClick={openModal}>
+                                                                   <i class="fa-solid fa-play"></i> Play Now
+                                                               </a>
+                                                               <input type="hidden"/>
+                                                           </div>
+                                                       </div>
+                                                       <div class="overlay-parts overlay-part2">
+                                                           <div class="part2-1">
+                                                               <a href="">
+                                                                   <i class="fa fa-volume-down"></i>
+                                                               </a>
+                                                           </div>
+                                                           <div class="part2-1">
+                                                               <a href=""><i class="fa-solid fa-heart"></i></a>
+                                                           </div>
+                                                           <div class="part2-1">
+                                                               <a href=""><i class="fa-solid fa-plus"></i></a>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+           
+                                           </div>
+                                           
+                                       // </div>
+                                       ))}
+                                       
+                                   </div>
+                                   <button class="handle right-handle">
+                                       <div class="text">
+                                       <i class="fa fa-angle-right"></i>
+                                       </div>
+                                   </button>
+                                   </div>
+                               </div> 
+           
+           
+                                       {/* SLIDER LIST TWO 2 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                                       <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title">Featured Movies to watch now</h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div>
+                                       {/* SLIDER LIST TWO 2 ENDS =========================================================*/} 
+           
+                                       {/* SLIDER LIST THREE 3 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++*/} 
+                                       <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title">Upcoming Movies</h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div> 
+                                       {/* SLIDER LIST THREE 3 ENDS =========================================================*/}
+           
+                                       {/* SLIDER LIST FOUR 4 STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                                       <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title">Your Favourites</h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div> 
+                                       {/* SLIDER LIST FOUR 4 ENDS =========================================================*/}
+                                   
+                               </section>
+                           </container>
+                       </main>
+                   
+                   </Modal>
+                   <Modal
+                   isOpen={SeasonmodalIsOpen}
+                   onAfterOpen={SeasonafterOpenModal}
+                   onRequestClose={SeasoncloseModal}
+                   contentLabel="Example Modal"
+                   class="modal-class"
+                 >
+                   {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
+                   {/* <button onClick={closeModal}>close</button> */}
+                   <main class="home-popup web-bg-color">
+                           <container class="home-popup-box">
+                               <section class="home-popup-s1">
+                               {/* video li width or heihgt 100% krni hai or baher wali div ki height adjust krni hai */}
+                               <div class="video-box">
+                                    <video id="video1" ref={videoRef} className="video" src="/video.mp4"  autoplay="autoplay"></video> 
+                                   {/* <video id="video1" ref={videoRef} className="video" src={selectedmoviedata.trailer}  autoplay="autoplay"></video> */}
+                               </div>
+                               
+                               <div className="controlsContainer">
+           
+                                   <div class="audio-control audio-control-row">
+                                       {/* <img className="video-play-center" alt="" src="/audioIcon.gif"/>  setMuted(m => !m) */}
+                                       <div class="audio-btn-box audio-control-col opacity">
+                                       {ismuted ? (
+           
+                                           
+                                           <a   class="center-video-btn audio-play-center">
+                                               
+                                               <i className="fa fa-volume-up" style={{fontSize:"36px", color:"whitesmoke"}} onClick={() =>isMuted() }></i>
+                                           </a>
+                                           ) : (
+                                           <a   class="center-video-btn audio-play-center">
+                                               <i className="fas fa-volume-mute" style={{fontSize:"36px", color:"whitesmoke"}} onClick={() =>isMutedOff() }></i>
+                                           </a>
+                                       
+                                       )}
+                                       </div>
+                                       <div class="audio-control-col audio-bar input-row">
+                                           <input  class="input-col"
+                                               type="range"
+                                               min={0}
+                                               max={1}
+                                               step={0.02}
+                                               value={volume}
+                                               onChange={event => {
+                                                   setVolume(event.target.valueAsNumber)
+                                                   const resetVolume =event.target.valueAsNumber/10;
+                                                   /* console.log (typeof(resetVolume))
+                                                   console.log (typeof(videoRef.current.volume)) */
+                                                   videoRef.current.volume = resetVolume;
+                                                   console.log(videoRef.current.volume)
+           
+                                           }}
+                                           />
+                                           {/* <button onClick={() => setMuted(m => !m)}>
+                                               {muted ? "muted" : "unmuted"}
+                                           </button> */}
+                                           <p class="input-col"> &nbsp;{(finalVolume.toFixed(1)*100)}</p>
+                                       </div>
+           
+                                       
+                                   </div>
+           
+                               <div class="center-box opacity">
+                                   {playing ? (
+                                   <a onClick={() => videoHandler("pause")} class="center-video-btn">
+                                       <img className="controlsIcon--small video-play-center" alt="" src="/pause.svg"/> 
+                                   </a>
+           
+                                   ) : (
+                                   <a onClick={() => videoHandler("play")} class="center-video-btn">
+                                       <img className="controlsIcon--small video-play-center" alt="" src="/play.svg"/>
+                                   </a>
+                                   )}
+                               </div>
+           
+                               <div className="controls">
+                                   {/* <img onClick={revert} className="controlsIcon" alt="" src="/backward-5.svg"/> */}
+                                   <div class="video-title"><h2>THE MARSHAL KING </h2></div>
+                               {playing ? (
+           
+                                   <a onClick={() => videoHandler("pause")} class="btn-trailer video-btn">
+                                       <img className="controlsIcon--small video-play" alt="" src="/pause.svg"/> &nbsp; Resume 
+                                   </a>
+                                   
+                                   ) : (
+                                   <a onClick={() => videoHandler("play")} class="btn-trailer video-btn">
+                                       <img className="controlsIcon--small video-play" alt="" src="/play.svg"/> &nbsp; Resume
+                                   </a>
+                                   )}
+                                   <div class="video-btn-like-row">
+                                       <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                       <div class="part2-1 btn-like-col"><a href=""><i class="fa-solid fa-plus"></i></a></div>
+                                   </div>
+                                   {/* <img onClick={fastForward} className="controlsIcon" alt="" src="/forward-5.svg"/> */}
+                               </div>
+                               </div>
+                               <div className="timecontrols">
+                               
+                                   <div className="time_progressbarContainer">
+                                       <div style={{ width: `${progress}%` }} className="time_progressBar"></div>
+                                   </div>
+                                   <div class="movie-time-control">
+                                       <p className="controlsTime">{Math.floor(videoTime / 60) + ":" + ("0" + Math.floor(videoTime % 60)).slice(-2)}</p>
+                                       &nbsp; &nbsp; <p> of </p> &nbsp; &nbsp;
+                                       <p className="controlsTime">{Math.floor(currentTime / 60) + ":" + ("0" + Math.floor(currentTime % 60)).slice(-2)}</p>
+                                   </div>
+                               </div>
+                                {/* // Volume Control Range slider */} 
+                               {/* <input
+                                   type="range"
+                                   defaultValue="0"
+                                   className="mx-2 progressBarvolume bar volume"
+                               /> */}
+                               
+                                   
+                               
+                                {/* <input
+                                   type="range"
+                                   className="progressBar bar"
+                                   defaultValue="0"
+                                   ref={progressBar}
+                                   onChange={changeRange}
+                               /> */}                     
+                               
+                               </section>
+           
+                               <section class="home-popup-s2-row" >
+                                   <container class="home-popup-s2-col home-popup-s2-p1">
+                                       <img src="https://i.pinimg.com/236x/c1/2b/d7/c12bd72009000fa249ee4260b2b9b4c5--english-movies-hollywood.jpg"></img>
+                                   </container>
+           
+                                   <container class="home-popup-s2-col home-popup-s2-p2">
+           
+                                       <div class="popup-s2-btn-row">
+                                           <a class="popup-s2-btn-col">Crime</a>
+                                           <a class="popup-s2-btn-col">Drama</a>
+                                           <a class="popup-s2-btn-col">Mystery</a>
+                                       </div>
+           
+                                       <div class="popup-s2-movie-title">
+                                           <h1>The Marshal King</h1>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row rait-star">
+                                           <a class="popup-s2-rait-col imbd">IMDB</a>
+                                           <h5 class="popup-s2-rait-col points">8.5</h5>
+                                           <div class="popup-s2-rait-col stars">
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star" aria-hidden="true"></i>
+                                               <i class="fa fa-star grey" aria-hidden="true"></i>
+                                           </div>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row time-movie">
+                                           <div class="popup-s2-rait-col age"><a>18+</a></div>
+                                           <div class="popup-s2-rait-col movie-time">2h 12m </div>
+                                           <div class="popup-s2-rait-col quality"><a>HD</a></div>
+                                           <div class="popup-s2-rait-col year">2022</div>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row add-favrt">
+                                           <div class="popup-s2-rait-col squre-dil"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                                           <div class="popup-s2-rait-col favourite"><h5>Add to Favourites</h5></div>
+                                       </div>
+           
+                                       <div class="popup-s2-rait-row-content" >
+                                           <h5>Lorem ipsum dilorr ammet, consectur adispgn ddeit, sed it ells, tempor me so widll addcteid him form us </h5>
+                                       </div>
+           
+                                   </container>
+           
+                                   <container class="home-popup-s2-col home-popup-s2-p3">
+                                       <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
+                                       <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
+                                       <div><p>Cast, Mark King, Williamson, Kate, Wmma Robert Eiza Gonz, More</p></div><br></br>
+                                   </container>
+           
+                               </section>
+           
+                               <section class="box-shadow-top">
+                                    
+                                   
+                               </section>
+                           </container>
+                       </main>
+                   
+               </Modal> 
+                        {/* HOME PAGE MODAL ENDS ================================================================================= */}
+           
+           <main class="web-bg-color">
+           
+                 {isShown && (<Header/>)}
+                   {/* <video id="video1" ref={videoRef} className="video" src="http://localhost:7000/static/trailer_1668071025491.mp4"></video>
+                    <div className="controlsContainer">
+                   <div className="controls">
+                       <img onClick={revert} className="controlsIcon" alt="" src="/backward-5.svg"/>
+                     {playing ? (
+                       <img onClick={() => videoHandler("pause")} className="controlsIcon--small" alt="" src="/pause.svg"/>
+                       ) : (
+                       <img onClick={() => videoHandler("play")} className="controlsIcon--small" alt="" src="/play.svg"/>
+                       )}
+                     <img onClick={fastForward} className="controlsIcon" alt="" src="/forward-5.svg"/>
+                   </div>
+                 </div>
+                 <div className="timecontrols">
+                 <p className="controlsTime">{Math.floor(videoTime / 60) + ":" + ("0" + Math.floor(videoTime % 60)).slice(-2)}</p>
+                   <div className="time_progressbarContainer">
+                     <div style={{ width: `${progress}%` }} className="time_progressBar"></div>
+                   </div>
+                   <p className="controlsTime">{Math.floor(currentTime / 60) + ":" + ("0" + Math.floor(currentTime % 60)).slice(-2)}</p>
+               </div> */}
+               
+              
+           
+                   {/* LINEAR GRADIENT STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                   
+                   {/* LINEAR GRADIENT ENDS ============================================================*/}
+                    {/* this problem code start */}
+           
+                   {/* SLIDER LIST ONE 1 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+           
+                   <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title stv-hm-rs-box1">TV Thrillers <a>see all</a></h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div>
+                    {/* SLIDER LIST ONE 1 ENDS =========================================================*/} 
+           
+                   {/*dont touch umar*/}
+                   {/* <div>
+                   <div >TV Thrillers  <a>see all</a></div>
+                    <div className='relative flex items-center'  >
+                   <span class="show-arrow"><MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft7} size={40} /></span>
+                   <div
+                     id='slider7'
+                     className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
+                   >
+                     {dbdata.map((item) => (
+                       <div class="container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
+                       <img
+                         className='list-images inline-block hover:scale-105 ease-in-out duration-300'
+                         src={item.thumbnail}
+                         alt='/'
+                       />
+                       <div class="overlay">
+                       <div class="overlay-box">
+                                                 <div class="overlay-parts overlay-part1">
+                                                     <h4>Boop Bitty</h4>
+                                                     <div class="part1-1">
+                                                         <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
+                                                     </div>
+                                                     <div class="part1-2 slide_right">
+                                                         <a  onClick={(event) => { selectedMovies(event,item); openModal();}}class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
+                                                         <input type="hidden"/>
+                                                     </div>
+                                                 </div>
+                                                 <div class="overlay-parts overlay-part2">
+                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
+                                                 </div>
+                                             </div>
+                         
+                       </div>
+                     </div>
+                       
+                     ))}
+                   </div >
+                   <span class="show-arrow"><MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight7} size={40}  /></span>
+                 </div> 
+                   </div> */}
+                   {/*dont touch above  */}
+           
+                    {/* SLIDER LIST TWO 2 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                    <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title stv-hm-rs-box1">Your Favourites <a>see all</a></h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div> 
+                   {/* SLIDER LIST TWO 2 ENDS =========================================================*/} 
+           
+                   {/* SLIDER LIST THREE 3 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++*/} 
+                   <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title stv-hm-rs-box1">TV Thrillers <a>see all</a></h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div>
+                   {/* SLIDER LIST THREE 3 ENDS =========================================================*/}
+           
+                   {/* SLIDER LIST FOUR 4 STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                   <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title stv-hm-rs-box1">Featured Movies to watch now <a>see all</a></h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div> 
+                    {/* SLIDER LIST FOUR 4 ENDS =========================================================*/}
+                    {/* there is problem code ends */}
+           
+                    {/* HOMEPAGE CENTER SLIDER 2 VIDEO SLIDER STARTS ++++++++++++++++++++++++++++++++++++++++++ */}
+                   {/* new */}  
+                   
+                   {/* HOMEPAGE CENTER SLIDER 2 VIDEO SLIDER ENDS ============================================= */}
+           
+                   {/* <div style={{ marginBottom:"20px", height:"250px", border:"2px solid green", backgroundColor:"#0d0d31"}}>
+                       <div style={{ backgroundColor:"#0d0d31", color:"white", padding:"8px", height : "20%", width:"100%"}}>Trending see all <a style={{color:"red"}}>see all</a></div>
+                         <div className='relative flex items-center'  >
+                             <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100  text-[#FFFFFF]' onClick={slideLeft6} size={40} />
+                             <div id='slider6'className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
+                               <div style={{height:"70%", width:"100%"}}>
+                               {data.map((item) => (
+                                 <div style={{border:"3px solid yellow"}} className='w-[200px] h-[110px] inline-block p-2 cursor-pointer '>
+                                   <div className='w-[200px] h-[110px] coming-slider-item' >
+                                         <img  src={item.img}  alt='/' />
+                                         <div class="overlay">
+                                             <div class="overlay-box">
+                                                 <div class="overlay-parts overlay-part1">
+                                                     <h4>Boop Bitty</h4>
+                                                     <div class="part1-1">
+                                                         <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
+                                                     </div>
+                                                     <div class="part1-2 slide_right">
+                                                         <a  class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
+                                                     </div>
+                                                 </div>
+                                                 <div class="overlay-parts overlay-part2">
+                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div >
+                                 </div>
+                               ))}
+           
+                               </div>
+                               
+                             </div>
+                             <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 text-[#FFFFFF] ' onClick={slideRight6} size={40}  />
+                       
+                           </div>
+                   </div > */}
+           
+                   {/* SLIDER LIST FIVE 5 STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                   <div class="stv-hp-row">
+                       <div class="stv-hp-header">
+                       <h3 class="title stv-hm-rs-box1">Upcoming Movies <a>see all</a></h3>
+                       <div class="stv-hp-progress-bar">
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                           <div class="progress-item"></div>
+                       </div>
+                       </div>
+                       <div class="stv-hp-container">
+                       <button class="handle left-handle">
+                           <div class="text">
+                               <i class="fa fa-angle-left"></i>
+                           </div>
+                       </button>
+                       <div class="stv-hp-slider">
+                           {data.map((item) => (
+                           // <div class="stv-hp-slidein">
+                               <div  class="stv-hp-movie">
+                                   <img class="list-images-movie" src={item.img} />
+                                   <div class="overlay-movie">
+                                       <div class="overlay-box">
+                                           <div class="overlay-parts overlay-part1">
+                                               <h4>Boop Bitty</h4>
+                                               <div class="part1-1">
+                                                   <span class="movie-about views">16+</span>
+                                                   <span class="movie-about">2h 40m</span>
+                                               </div>
+                                               <div class="part1-2 slide_right">
+                                                   <a class="btn-trailer" onClick={openModal}>
+                                                       <i class="fa-solid fa-play"></i> Play Now
+                                                   </a>
+                                                   <input type="hidden"/>
+                                               </div>
+                                           </div>
+                                           <div class="overlay-parts overlay-part2">
+                                               <div class="part2-1">
+                                                   <a href="">
+                                                       <i class="fa fa-volume-down"></i>
+                                                   </a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-heart"></i></a>
+                                               </div>
+                                               <div class="part2-1">
+                                                   <a href=""><i class="fa-solid fa-plus"></i></a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+           
+                               </div>
+                               
+                           // </div>
+                            ))}
+                           
+                       </div>
+                       <button class="handle right-handle">
+                           <div class="text">
+                           <i class="fa fa-angle-right"></i>
+                           </div>
+                       </button>
+                       </div>
+                   </div> 
+                   {/* SLIDER LIST FIVE 5 ENDS =============================================================*/}    
+                   {isShown && (<WebFooter/>)}   
+           </main>
+           </div>
+               )}
+                             </>
+            
+
          );
       }
 
