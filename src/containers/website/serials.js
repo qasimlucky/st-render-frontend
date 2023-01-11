@@ -887,9 +887,8 @@ function Serials() {
                </div> */}
                
                
-               <div class="fullwidth-slider first-page-slider">
+               {/* <div class="fullwidth-slider first-page-slider">
                <div>
-                 {/* <button onClick={openModal}>Open Modal</button> */}
                  
                </div>
                        <div id="headerslider" class="carousel slide"> 
@@ -911,11 +910,11 @@ function Serials() {
                                                        </div>
                                                        <div class="slide_right" data-animation="animated bounceInRight">
                                                            <Link href="javascript:;" class="btn-trailer" to="/player">
-                                                               {/* {languagedata.play_now} */}
+                                                               
                                                                Play Now
                                                            </Link> 
                                                            <a href="javascript:;" class="btn-detail">
-                                                               {/* {languagedata.more_details} */}
+                                                               
                                                                More Details
                                                            </a>
                                                        </div>
@@ -993,7 +992,7 @@ function Serials() {
                        </div> 
                        <div class="home-gradient-1">
                        </div> 
-                   </div> 
+                   </div>  */}
            
                    {/* LINEAR GRADIENT STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
                    
@@ -1329,7 +1328,7 @@ function Serials() {
                                                <div class="third-col">
                                                    <div class="courses-details video-link">
                                                        <div class="courses-details-images">
-                                                               <img src="web-assets/img/banner-img/ship-img3.jpg" alt="Courses Details"/>
+                                                               <img src="web-assets/img/banner-img/serial.jpg" alt="Courses Details"/>
                                                            <a class="courses-play"  target="_blank">
                                                                <i class="fa-solid fa-play play"></i>
                                                            </a>
@@ -1337,7 +1336,7 @@ function Serials() {
                                                    </div>
                                                </div>
                    
-                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img1.jpg")`}}> 
+                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/serial.jpg")`}}> 
                                                    <div class="slider-content" >
                                                        <div class="title section-3rd-title" data-animation="animated bounceInRight" >Shadow and Bone</div>
                                                        <div class="views-ratings">
@@ -1370,7 +1369,7 @@ function Serials() {
                                                <div class="third-col">
                                                    <div class="courses-details video-link">
                                                        <div class="courses-details-images">
-                                                               <img src="web-assets/img/banner-img/ship-img2.jpg" alt="Courses Details"/>
+                                                               <img src="web-assets/img/banner-img/serials5.jpg" alt="Courses Details"/>
                                                            <a class="courses-play"  target="_blank">
                                                            <i class="fa-solid fa-play play"></i>
                                                            </a>
@@ -1378,7 +1377,7 @@ function Serials() {
                                                    </div>
                                                </div>
                    
-                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img2.jpg")`}}> 
+                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/serials5.jpg")`}}> 
                                                    <div class="slider-content" >
                                                        <div class="title section-3rd-title" data-animation="animated bounceInRight" >Sail Coaster</div>
                                                        <div class="views-ratings">
@@ -1408,7 +1407,7 @@ function Serials() {
                                                <div class="third-col">
                                                    <div class="courses-details video-link">
                                                        <div class="courses-details-images">
-                                                               <img src="web-assets/img/banner-img/ship-img1.jpg" alt="Courses Details"/>
+                                                               <img src="web-assets/img/banner-img/serials3.jpg" alt="Courses Details"/>
                                                            <a class="courses-play"  target="_blank">
                                                                <i class="fa-solid fa-play play"></i>
                                                            </a>
@@ -1416,7 +1415,7 @@ function Serials() {
                                                    </div>
                                                </div>
                    
-                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img1.jpg")`}}> 
+                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/serials3.jpg")`}}> 
                                                    <div class="slider-content" >
                                                        <div class="title section-3rd-title" data-animation="animated bounceInRight" >Lord of the Rings</div>
                                                        <div class="views-ratings">

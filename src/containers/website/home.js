@@ -1278,7 +1278,7 @@ function HomePage() {
                                     <div class="third-col">
                                         <div class="courses-details video-link">
                                             <div class="courses-details-images">
-                                                    <img src="web-assets/img/banner-img/ship-img3.jpg" alt="Courses Details"/>
+                                                    <img src="web-assets/img/banner-img/movie1.jpg" alt="Courses Details"/>
                                                 <a class="courses-play"  target="_blank">
                                                     <i class="fa-solid fa-play play"></i>
                                                 </a>
@@ -1286,7 +1286,7 @@ function HomePage() {
                                         </div>
                                     </div>
         
-                                    <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img1.jpg")`}}> 
+                                    <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/movie1.jpg")`}}> 
                                         <div class="slider-content" >
                                             <div class="title section-3rd-title" data-animation="animated bounceInRight" >Shadow and Bone</div>
                                             <div class="views-ratings">
@@ -1319,7 +1319,7 @@ function HomePage() {
                                     <div class="third-col">
                                         <div class="courses-details video-link">
                                             <div class="courses-details-images">
-                                                    <img src="web-assets/img/banner-img/ship-img2.jpg" alt="Courses Details"/>
+                                                    <img src="web-assets/img/banner-img/movie7.jpg" alt="Courses Details"/>
                                                 <a class="courses-play"  target="_blank">
                                                 <i class="fa-solid fa-play play"></i>
                                                 </a>
@@ -1327,7 +1327,7 @@ function HomePage() {
                                         </div>
                                     </div>
         
-                                    <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img2.jpg")`}}> 
+                                    <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/movie7.jpg")`}}> 
                                         <div class="slider-content" >
                                             <div class="title section-3rd-title" data-animation="animated bounceInRight" >Sail Coaster</div>
                                             <div class="views-ratings">
@@ -1357,7 +1357,7 @@ function HomePage() {
                                     <div class="third-col">
                                         <div class="courses-details video-link">
                                             <div class="courses-details-images">
-                                                    <img src="web-assets/img/banner-img/ship-img1.jpg" alt="Courses Details"/>
+                                                    <img src="web-assets/img/banner-img/movie8.jpg" alt="Courses Details"/>
                                                 <a class="courses-play"  target="_blank">
                                                     <i class="fa-solid fa-play play"></i>
                                                 </a>
@@ -1365,7 +1365,7 @@ function HomePage() {
                                         </div>
                                     </div>
         
-                                    <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img1.jpg")`}}> 
+                                    <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/movie8.jpg")`}}> 
                                         <div class="slider-content" >
                                             <div class="title section-3rd-title" data-animation="animated bounceInRight" >Lord of the Rings</div>
                                             <div class="views-ratings">

@@ -861,143 +861,13 @@ function Movies() {
                            </container>
                        </main>
                    
-               </Modal> 
+                    </Modal> 
                         {/* HOME PAGE MODAL ENDS ================================================================================= */}
            
            <main class="web-bg-color">
            
                  {isShown && (<Header/>)}
-                   {/* <video id="video1" ref={videoRef} className="video" src="http://localhost:7000/static/trailer_1668071025491.mp4"></video>
-                    <div className="controlsContainer">
-                   <div className="controls">
-                       <img onClick={revert} className="controlsIcon" alt="" src="/backward-5.svg"/>
-                     {playing ? (
-                       <img onClick={() => videoHandler("pause")} className="controlsIcon--small" alt="" src="/pause.svg"/>
-                       ) : (
-                       <img onClick={() => videoHandler("play")} className="controlsIcon--small" alt="" src="/play.svg"/>
-                       )}
-                     <img onClick={fastForward} className="controlsIcon" alt="" src="/forward-5.svg"/>
-                   </div>
-                 </div>
-                 <div className="timecontrols">
-                 <p className="controlsTime">{Math.floor(videoTime / 60) + ":" + ("0" + Math.floor(videoTime % 60)).slice(-2)}</p>
-                   <div className="time_progressbarContainer">
-                     <div style={{ width: `${progress}%` }} className="time_progressBar"></div>
-                   </div>
-                   <p className="controlsTime">{Math.floor(currentTime / 60) + ":" + ("0" + Math.floor(currentTime % 60)).slice(-2)}</p>
-               </div> */}
-               
-               
-               <div class="fullwidth-slider first-page-slider">
-               <div>
-                 {/* <button onClick={openModal}>Open Modal</button> */}
-                 
-               </div>
-                       <div id="headerslider" class="carousel slide"> 
-                           
-                           <div class="carousel-inner" role="listbox">
-                               <div class="item active">
-                                   <div class="fill banner-ship-img" style={{backgroundImage:`url("web-assets/img/banner-img/movie6.jpg")`}}>
-                                    <div class="bs-slider-overlay"></div>
-                                       <div class="container movie-slider-container"> 
-                                           <div class="row">
-                                                <div class="col-sm-12 movie-slider-content"> 
-                                                   <div class="slider-content" >
-                                                       <div class="title" data-animation="animated bounceInRight" >The Avengers</div>
-                                                       <div><span class="movie-about views">16+</span><span class="movie-about">2h 40m</span></div>
-                                                       <div class="title-detail">
-                                                           <p>
-                                                                Nick Fury is compelled to launch the Avengers Initiative when Loki poses a threat to planet Earth. 
-                                                           </p>
-                                                       </div>
-                                                       <div class="slide_right" data-animation="animated bounceInRight">
-                                                           <Link href="javascript:;" class="btn-trailer" to="/player">
-                                                               {/* {languagedata.play_now} */}
-                                                               Play Now
-                                                           </Link> 
-                                                           <a href="javascript:;" class="btn-detail">
-                                                               {/* {languagedata.more_details} */}
-                                                               More Details
-                                                           </a>
-                                                       </div>
-                                                       <div class="watch-trailer">
-                                                           <a href=""><img src="web-assets/img/play (1).png" alt=""/> </a> &nbsp; &nbsp; Watch Trailer
-                                                       </div>
-                                                       <div class="gradient"></div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="item">
-                                   <div class="fill  banner-ship-img2" style={{backgroundImage:`url("web-assets/img/banner-img/movie05.jpg")`}}>
-                                    <div class="bs-slider-overlay"></div>
-                                       <div class="container movie-slider-container"> 
-                                           <div class="row">
-                                                <div class="col-sm-12 movie-slider-content"> 
-                                                   <div class="slider-content" >
-                                                       <div class="title" data-animation="animated bounceInRight" >Spider-Man </div>
-                                                       <div><span class="movie-about views">16+</span><span class="movie-about">2h 40m</span></div>
-                                                       <div class="title-detail">
-                                                           <p>
-                                                                Spider-Man seeks the help of Doctor Strange to forget his exposed secret identity as Peter Parker.
-                                                           </p>
-                                                       </div>
-                                                       <div class="slide_right" data-animation="animated bounceInRight">
-                                                           <a href="javascript:;" class="btn-trailer">Play Now</a> <a href="javascript:;" class="btn-detail">More details</a>
-                                                       </div>
-                                                       <div class="watch-trailer">
-                                                           <a href=""> <img src="web-assets/img/play (1).png" alt=""/>  </a> &nbsp; &nbsp; Watch Trailer
-                                                       </div>
-                                                       <div class="gradient"></div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="item">
-                                   <div class="fill  banner-ship-img3" style={{backgroundImage:`url("web-assets/img/banner-img/movie9.jpg")`}} data-bg-image="images/header/header.png">
-                                    <div class="bs-slider-overlay"></div>
-                                       <div class="container movie-slider-container"> 
-                                           <div class="row">
-                                                <div class="col-sm-12 movie-slider-content"> 
-                                                   <div class="slider-content" >
-                                                       <div class="title" data-animation="animated bounceInRight" >Resident Evil</div>
-                                                       <div><span class="movie-about views">16+</span><span class="movie-about">2h 40m</span></div>
-                                                       <div class="title-detail">
-                                                           <p>
-                                                                After surviving the apocalypse, Alice awakens to find that the Umbrella Corporation has developed a dangerous virus.
-                                                           </p>
-                                                       </div>
-                                                       <div class="slide_right" data-animation="animated bounceInRight">
-                                                           <a href="javascript:;" class="btn-trailer">Play Now</a> <a href="javascript:;" class="btn-detail">More details</a>                                            </div>
-                                                       <div class="watch-trailer">
-                                                           <a href=""><img src="web-assets/img/play (1).png" alt=""/> </a> &nbsp; &nbsp; Watch Trailer
-                                                       </div>
-                                                       <div class="gradient"></div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                           <a class="carousel-control left" href="#headerslider" data-slide="prev">
-                               <i class="fa fa-angle-left"></i>
-                           </a>
-                           <a class="carousel-control right" href="#headerslider" data-slide="next">
-                               <i class="fa fa-angle-right"></i>
-                           </a>
-                       </div> 
-                       <div class="home-gradient-1">
-                       </div> 
-                   </div> 
-           
-                   {/* LINEAR GRADIENT STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
                    
-                   {/* LINEAR GRADIENT ENDS ============================================================*/}
                     {/* this problem code start */}
            
                    {/* SLIDER LIST ONE 1 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
@@ -1068,50 +938,6 @@ function Movies() {
                    </div>
                     {/* SLIDER LIST ONE 1 ENDS =========================================================*/} 
            
-                   {/*dont touch umar*/}
-                   {/* <div>
-                   <div >TV Thrillers  <a>see all</a></div>
-                    <div className='relative flex items-center'  >
-                   <span class="show-arrow"><MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100 hover-css  text-[#FFFFFF]' onClick={slideLeft7} size={40} /></span>
-                   <div
-                     id='slider7'
-                     className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
-                   >
-                     {dbdata.map((item) => (
-                       <div class="container  inline-block p-2 hover:scale-105 ease-in-out duration-300">
-                       <img
-                         className='list-images inline-block hover:scale-105 ease-in-out duration-300'
-                         src={item.thumbnail}
-                         alt='/'
-                       />
-                       <div class="overlay">
-                       <div class="overlay-box">
-                                                 <div class="overlay-parts overlay-part1">
-                                                     <h4>Boop Bitty</h4>
-                                                     <div class="part1-1">
-                                                         <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                                     </div>
-                                                     <div class="part1-2 slide_right">
-                                                         <a  onClick={(event) => { selectedMovies(event,item); openModal();}}class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
-                                                         <input type="hidden"/>
-                                                     </div>
-                                                 </div>
-                                                 <div class="overlay-parts overlay-part2">
-                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                                                 </div>
-                                             </div>
-                         
-                       </div>
-                     </div>
-                       
-                     ))}
-                   </div >
-                   <span class="show-arrow"><MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 hover-css text-[#FFFFFF] ' onClick={slideRight7} size={40}  /></span>
-                 </div> 
-                   </div> */}
-                   {/*dont touch above  */}
            
                     {/* SLIDER LIST TWO 2 STARTS +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
                     <div class="stv-hp-row">
@@ -1329,7 +1155,7 @@ function Movies() {
                                                <div class="third-col">
                                                    <div class="courses-details video-link">
                                                        <div class="courses-details-images">
-                                                               <img src="web-assets/img/banner-img/ship-img3.jpg" alt="Courses Details"/>
+                                                               <img src="web-assets/img/banner-img/movie7.jpg" alt="Courses Details"/>
                                                            <a class="courses-play"  target="_blank">
                                                                <i class="fa-solid fa-play play"></i>
                                                            </a>
@@ -1337,7 +1163,7 @@ function Movies() {
                                                    </div>
                                                </div>
                    
-                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img1.jpg")`}}> 
+                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/movie7.jpg")`}}> 
                                                    <div class="slider-content" >
                                                        <div class="title section-3rd-title" data-animation="animated bounceInRight" >Shadow and Bone</div>
                                                        <div class="views-ratings">
@@ -1370,7 +1196,7 @@ function Movies() {
                                                <div class="third-col">
                                                    <div class="courses-details video-link">
                                                        <div class="courses-details-images">
-                                                               <img src="web-assets/img/banner-img/ship-img2.jpg" alt="Courses Details"/>
+                                                               <img src="web-assets/img/banner-img/movie8.jpg" alt="Courses Details"/>
                                                            <a class="courses-play"  target="_blank">
                                                            <i class="fa-solid fa-play play"></i>
                                                            </a>
@@ -1378,7 +1204,7 @@ function Movies() {
                                                    </div>
                                                </div>
                    
-                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img2.jpg")`}}> 
+                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/movie8.jpg")`}}> 
                                                    <div class="slider-content" >
                                                        <div class="title section-3rd-title" data-animation="animated bounceInRight" >Sail Coaster</div>
                                                        <div class="views-ratings">
@@ -1408,7 +1234,7 @@ function Movies() {
                                                <div class="third-col">
                                                    <div class="courses-details video-link">
                                                        <div class="courses-details-images">
-                                                               <img src="web-assets/img/banner-img/ship-img1.jpg" alt="Courses Details"/>
+                                                               <img src="web-assets/img/banner-img/movie1.jpg" alt="Courses Details"/>
                                                            <a class="courses-play"  target="_blank">
                                                                <i class="fa-solid fa-play play"></i>
                                                            </a>
@@ -1416,7 +1242,7 @@ function Movies() {
                                                    </div>
                                                </div>
                    
-                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/ship-img1.jpg")`}}> 
+                                               <div class="col-sm-12 movie-slider-content third-col" style={{backgroundImage: `url("web-assets/img/banner-img/movie1.jpg")`}}> 
                                                    <div class="slider-content" >
                                                        <div class="title section-3rd-title" data-animation="animated bounceInRight" >Lord of the Rings</div>
                                                        <div class="views-ratings">
@@ -1449,46 +1275,6 @@ function Movies() {
                        </div>  
                    </div> 
                    {/* HOMEPAGE CENTER SLIDER 2 VIDEO SLIDER ENDS ============================================= */}
-           
-                   {/* <div style={{ marginBottom:"20px", height:"250px", border:"2px solid green", backgroundColor:"#0d0d31"}}>
-                       <div style={{ backgroundColor:"#0d0d31", color:"white", padding:"8px", height : "20%", width:"100%"}}>Trending see all <a style={{color:"red"}}>see all</a></div>
-                         <div className='relative flex items-center'  >
-                             <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100  text-[#FFFFFF]' onClick={slideLeft6} size={40} />
-                             <div id='slider6'className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'>
-                               <div style={{height:"70%", width:"100%"}}>
-                               {data.map((item) => (
-                                 <div style={{border:"3px solid yellow"}} className='w-[200px] h-[110px] inline-block p-2 cursor-pointer '>
-                                   <div className='w-[200px] h-[110px] coming-slider-item' >
-                                         <img  src={item.img}  alt='/' />
-                                         <div class="overlay">
-                                             <div class="overlay-box">
-                                                 <div class="overlay-parts overlay-part1">
-                                                     <h4>Boop Bitty</h4>
-                                                     <div class="part1-1">
-                                                         <span class="movie-about views">16+</span><span class="movie-about">2h 40m</span>
-                                                     </div>
-                                                     <div class="part1-2 slide_right">
-                                                         <a  class="btn-trailer"><i class="fa-solid fa-play"></i> Play Now</a>
-                                                     </div>
-                                                 </div>
-                                                 <div class="overlay-parts overlay-part2">
-                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                                                     <div class="part2-1"><a href=""><i class="fa-solid fa-plus"></i></a></div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div >
-                                 </div>
-                               ))}
-           
-                               </div>
-                               
-                             </div>
-                             <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100 text-[#FFFFFF] ' onClick={slideRight6} size={40}  />
-                       
-                           </div>
-                   </div > */}
            
                    {/* SLIDER LIST FIVE 5 STARTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
                    <div class="stv-hp-row">
