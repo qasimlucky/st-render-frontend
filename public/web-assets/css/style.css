@@ -978,13 +978,15 @@ a{
   }
   .fullwidth-slider .carousel-control i {
     font-size: 20px;
-    padding: 3px 2px;
-    vertical-align: text-top;
+     padding: 3px 2px ;
+     vertical-align:middle ;
     color: whitesmoke;
     -webkit-transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
     transition: all 0.25s ease;
   }
+
+
   .fullwidth-slider .carousel-control.left {
     left: 1%;
   }
