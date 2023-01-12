@@ -166,16 +166,16 @@ function Header() {
                                         <div class="stv-profile-dropdown">
                                             <div class="stv-profile-dropdown-box">
                                                 <div class="stv-profile-dropdown-item">
-                                                    <a class="stv-profile-row" href="http://localhost:3000/userprofile">
+                                                    <Link class="stv-profile-row" to="/userprofile">
                                                         <img class="stv-profile-col" src="web-assets/img/user-profile-icon.png"></img>
                                                         <p class="stv-profile-col">My Profile</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                                 <div class="stv-profile-dropdown-item stv-pf-d-p1">
-                                                    <a class="stv-profile-row" href="http://localhost:3000/pricingplan">
+                                                    <Link class="stv-profile-row" to="/pricingplan">
                                                         <img class="stv-profile-col" src="web-assets/img/settings.png"></img>
                                                         <p class="stv-profile-col">Pricing Plan</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                                 <div class="stv-profile-dropdown-item">
                                                     <Link onClick = {(e) =>submit(e)} class="stv-profile-row" href="">
