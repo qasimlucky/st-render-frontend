@@ -1,5 +1,6 @@
 
 import React, { useState,useEffect,Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import { useRef } from "react";
@@ -33,7 +34,9 @@ function HomePage() {
     const [languagedata, setLanguageData] = useState()
     const [languagesate, setLanguageSate] = useState(true)
     //
-   
+    
+    
+   //
     const lang= localStorage.getItem("key")
     /* useEffect(() => { 
         axios
@@ -156,6 +159,12 @@ function HomePage() {
         setSelectedMovieData(item)
         console.log(selectedmoviedata)
       }
+      let navigate = useNavigate();
+      function OpenMoviePlayer(sendData){
+        console.log("ppppppppppppppppppp")
+        console.log(sendData)
+        navigate("/player",{state:{sendData:sendData}})
+      } 
   
          return (
             
@@ -979,7 +988,7 @@ function HomePage() {
                                         <span class="movie-about">2h 40m</span>
                                     </div>
                                     <div class="part1-2 slide_right">
-                                        <a class="btn-trailer" onClick={openModal}>
+                                        <a class="btn-trailer" /* onClick={openModal} */  onClick={() =>OpenMoviePlayer(item)} >
                                             <i class="fa-solid fa-play"></i> Play Now
                                         </a>
                                         <input type="hidden"/>

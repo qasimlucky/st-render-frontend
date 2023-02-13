@@ -7,17 +7,10 @@ import WebFooter from "../../components/website/footer";
 import axios from "axios"; 
 function SignUpOtpVerify() {
     
-    const [data, setData] = useState({  
+    const [data, setData] = useState({
     }) 
 
-    function upload (e){
-        const newdata = {...data}
-        newdata[e.target.id] = e.target.value
-        newdata["phoneNumber"] = Rdata.phoneNumber
-        setData(newdata)
-        console.log(newdata)
-
-        } 
+     
     
     const location = useLocation();
       // console.log(location.state.sendData) 
@@ -81,7 +74,7 @@ function SignUpOtpVerify() {
                   <form  onSubmit = {(e) =>submit(e)}  method="HTTP_METHOD" encType="multipart/form-data">
                     <div class="row">
                       <div class="form-group col-12">
-                          <input onChange = {(e) =>upload(e)} id="otp" type="text" name="text"   class="form-control input"  placeholder="otp"/>       
+                          {/* <input onChange = {(e) =>upload(e)} id="otp" type="text" name="text"   class="form-control input"  placeholder="otp"/> */}       
                       </div>
                     </div>
 
